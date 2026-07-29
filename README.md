@@ -2,9 +2,20 @@
 
 # 👋 Hi, I'm Eka Nazar Fajriansyah
 
-### Full-Stack Web Developer | Laravel Developer
+### Full-Stack Web Developer | Information Systems Graduate
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Poppins&size=22&duration=3500&pause=1000&color=00F7FF&center=true&vCenter=true&width=650&lines=Full-Stack+Web+Developer;Laravel+Developer;Information+Systems+Graduate;UI%2FUX+Enthusiast;Always+Learning+New+Things" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Poppins&weight=600&size=24&duration=3500&pause=1000&color=2563EB&center=true&vCenter=true&width=700&lines=Full-Stack+Web+Developer;Laravel+Developer;Information+Systems+Graduate;Building+Modern+Web+Applications;Always+Learning+New+Things"/>
+
+<p>
+  <a href="mailto:YOUR_EMAIL@gmail.com">
+    <img src="https://img.shields.io/badge/Email-2563EB?style=for-the-badge&logo=gmail&logoColor=white"/>
+  </a>
+  <a href="https://linkedin.com/in/nazrfjr">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
+  </a>
+</p>
+
+![](https://komarev.com/ghpvc/?username=nazrfjri&style=for-the-badge)
 
 </div>
 
@@ -12,52 +23,91 @@
 
 # 💫 About Me
 
-- 💻 Full-Stack Web Developer
-- 🏢 Currently working at **PT. Inti Ganda Perdana**
-- 🎓 Information Systems Graduate
-- 🌱 Exploring Laravel Ecosystem
-- 🎨 Passionate about UI/UX
-- ⚡ Building Internal Web Applications
+💻 Full-Stack Web Developer with an Information Systems background.
+
+🎓 Bachelor's Degree in Information Systems  
+**Universitas Singaperbangsa Karawang** (2021 – 2025)  
+**GPA : 3.88 / 4.00**
+
+🏢 Currently working as a **Full-Stack Web Developer** at **PT. Inti Ganda Perdana**, developing and maintaining internal manufacturing web applications using Laravel, JavaScript, PostgreSQL, and MySQL.
+
+🌱 Interested in:
+
+- Backend Development
+- Laravel Ecosystem
+- Frontend Development
+- UI/UX
+- Database Optimization
 
 ---
 
-# 🌐 Connect with Me
+# 💼 Experience
 
-<p align="left">
-<a href="https://linkedin.com/in/nazrfjr">
-<img src="https://skillicons.dev/icons?i=linkedin" />
-</a>
+## 🏭 Full-Stack Web Developer
+**PT. Inti Ganda Perdana**  
+*2025 – Present*
 
-<a href="mailto:your@email.com">
-<img src="https://skillicons.dev/icons?i=gmail" />
-</a>
-
-</p>
+- Developed and maintained internal manufacturing web applications.
+- Built backend features using Laravel.
+- Processed and integrated operational company data.
+- Optimized PostgreSQL & MySQL queries.
+- Fixed bugs and improved application performance.
+- Assisted deployment and production maintenance.
 
 ---
 
-# 💻 Tech Stack
+## 📚 Knowledge Management Intern
+**PT. Inti Ganda Perdana**
 
-<p>
+*2024 – 2025*
 
-<img src="https://skillicons.dev/icons?i=html,css,js,php,laravel,bootstrap,tailwind,mysql,git,github,vscode,figma" />
-
-</p>
+- Conducted training and mentoring sessions.
+- Produced instructional learning videos.
+- Managed WI, QCS and PS documentation.
+- Developed competency assessment tools using Excel.
 
 ---
 
 # 🚀 Featured Projects
 
-| Project | Description |
-|---------|-------------|
-| 🏭 Internal Manufacturing System | Laravel-based internal operational application |
-| 🎓 SIRKUS | Classroom Borrowing Information System |
-| 📦 Inventory System | Inventory Management using PHP & MySQL |
-| 🎨 UI/UX Design | Design Thinking & Figma Projects |
+| Project | Tech Stack |
+|---------|------------|
+| 🏫 SIRKUS - Classroom Reservation System | Laravel, Bootstrap, MySQL |
+| 📦 Inventory Management System | PHP, MySQL |
+| 📊 Manufacturing KPI Dashboard | Laravel, PostgreSQL |
+| 🎨 UI/UX Classroom Booking | Figma |
+| 🌦 Weather Radar API | React + API |
+| 🎬 Movie List App | React + Vite |
+| 🛒 E-Commerce Website | React + Vite |
 
 ---
 
-# 📊 GitHub Stats
+# 💻 Tech Stack
+
+<p align="center">
+
+<img src="https://skillicons.dev/icons?i=html,css,js,php,laravel,bootstrap,react,mysql,postgres,git,github,vscode,figma,postman"/>
+
+</p>
+
+---
+
+# 📜 Certifications
+
+- IBM – Web Development Fundamentals
+- Hactiv8 – Fullstack Web Development
+- Hactiv8 – ReactJS
+- Hactiv8 – JavaScript Asynchronous
+- Hactiv8 – Advanced Algorithm
+- SoloLearn – SQL
+- Udemy – UI Design
+- Udemy – MongoDB
+- Udemy – REST API
+- Udemy – Weather App Development
+
+---
+
+# 📊 GitHub Analytics
 
 <p align="center">
 
@@ -79,16 +129,6 @@
 
 ---
 
-# 🏆 GitHub Trophies
-
-<p align="center">
-
-<img src="https://github-profile-trophy.vercel.app/?username=nazrfjri&theme=tokyonight&no-frame=true&column=4"/>
-
-</p>
-
----
-
 # 📈 Contribution Graph
 
 <p align="center">
@@ -99,10 +139,30 @@
 
 ---
 
+# 🏆 GitHub Trophies
+
+<p align="center">
+
+<img src="https://github-profile-trophy.vercel.app/?username=nazrfjri&theme=tokyonight&column=4&margin-w=15&margin-h=15&no-frame=true"/>
+
+</p>
+
+---
+
+# 🎯 Current Focus
+
+- 🚀 Building scalable Laravel applications
+- 📈 Backend API Development
+- 🗄 Database Optimization
+- 🎨 Better UI/UX
+- ☁ Learning modern deployment workflows
+
+---
+
 <div align="center">
 
-![](https://komarev.com/ghpvc/?username=nazrfjri&style=for-the-badge)
+### 💙 Thanks for visiting my profile!
 
-### ⭐ Thanks for visiting!
+*"Code. Learn. Improve. Repeat."*
 
 </div>

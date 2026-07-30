@@ -2,18 +2,25 @@
 
 # 👋 Hi, I'm Eka Nazar Fajriansyah
 
-### Full-Stack Web Developer | Information Systems Graduate
+### Full-Stack Web Developer • UI/UX Designer • Information Systems Graduate
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Poppins&weight=600&size=24&duration=3500&pause=1000&color=2563EB&center=true&vCenter=true&width=700&lines=Full-Stack+Web+Developer;Laravel+Developer;Information+Systems+Graduate;Building+Modern+Web+Applications;Always+Learning+New+Things"/>
+<img src="https://readme-typing-svg.herokuapp.com?font=Poppins&weight=600&size=24&duration=3500&pause=1000&color=3B82F6&center=true&vCenter=true&width=750&lines=Full-Stack+Web+Developer;Laravel+Developer;UI%2FUX+Designer;Building+Modern+Web+Applications;Always+Learning+New+Things"/>
 
-<p>
-  <a href="mailto:YOUR_EMAIL@gmail.com">
-    <img src="https://img.shields.io/badge/Email-2563EB?style=for-the-badge&logo=gmail&logoColor=white"/>
-  </a>
-  <a href="https://linkedin.com/in/nazrfjr">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
-  </a>
-</p>
+<br>
+
+<a href="mailto:ekanazarfajriansyah@gmail.com">
+<img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
+</a>
+
+<a href="https://linkedin.com/in/nazrfjr">
+<img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a>
+
+<a href="https://github.com/nazrfjri">
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
+</a>
+
+<br><br>
 
 ![](https://komarev.com/ghpvc/?username=nazrfjri&style=for-the-badge)
 
@@ -21,148 +28,170 @@
 
 ---
 
-# 💫 About Me
+# 👨‍💻 About Me
 
-💻 Full-Stack Web Developer with an Information Systems background.
+I'm a **Full-Stack Web Developer** with experience developing **internal manufacturing web applications** using Laravel, PostgreSQL, MySQL, and JavaScript.
 
-🎓 Bachelor's Degree in Information Systems  
-**Universitas Singaperbangsa Karawang** (2021 – 2025)  
+Besides software development, I also have experience in **UI/UX Design** through academic projects using **Figma** and the **Design Thinking** methodology, as well as experience in **Knowledge Management**, creating training materials and managing organizational documentation.
+
+🎓 **Bachelor of Information Systems**  
+Universitas Singaperbangsa Karawang  
 **GPA : 3.88 / 4.00**
-
-🏢 Currently working as a **Full-Stack Web Developer** at **PT. Inti Ganda Perdana**, developing and maintaining internal manufacturing web applications using Laravel, JavaScript, PostgreSQL, and MySQL.
-
-🌱 Interested in:
-
-- Backend Development
-- Laravel Ecosystem
-- Frontend Development
-- UI/UX
-- Database Optimization
 
 ---
 
-# 💼 Experience
+# 💼 Professional Experience
 
 ## 🏭 Full-Stack Web Developer
-**PT. Inti Ganda Perdana**  
-*2025 – Present*
+**PT. Inti Ganda Perdana**
 
-- Developed and maintained internal manufacturing web applications.
-- Built backend features using Laravel.
-- Processed and integrated operational company data.
-- Optimized PostgreSQL & MySQL queries.
-- Fixed bugs and improved application performance.
-- Assisted deployment and production maintenance.
+- Develop and maintain internal manufacturing web applications
+- Build backend features using Laravel
+- Optimize PostgreSQL & MySQL databases
+- Process operational manufacturing data
+- Debugging and application maintenance
 
 ---
 
 ## 📚 Knowledge Management Intern
 **PT. Inti Ganda Perdana**
 
-*2024 – 2025*
+- Conduct training & mentoring sessions
+- Produce instructional learning videos
+- Manage WI, PS & QCS documentation
+- Develop competency assessment systems
 
-- Conducted training and mentoring sessions.
-- Produced instructional learning videos.
-- Managed WI, QCS and PS documentation.
-- Developed competency assessment tools using Excel.
+---
+
+## 🎨 UI/UX Designer (Academic Projects)
+
+- User Research
+- Design Thinking
+- Wireframing
+- High-Fidelity Prototype
+- Interactive Prototype
+- Usability Testing
 
 ---
 
 # 🚀 Featured Projects
 
-| Project | Tech Stack |
-|---------|------------|
-| 🏫 SIRKUS - Classroom Reservation System | Laravel, Bootstrap, MySQL |
-| 📦 Inventory Management System | PHP, MySQL |
-| 📊 Manufacturing KPI Dashboard | Laravel, PostgreSQL |
-| 🎨 UI/UX Classroom Booking | Figma |
-| 🌦 Weather Radar API | React + API |
+| Project | Technology |
+|----------|------------|
+| 🏭 Manufacturing Internal Web Application | Laravel • PostgreSQL • JavaScript |
+| 🏫 SIRKUS - Classroom Reservation System | Laravel • Bootstrap • MySQL • Figma |
+| 💼 Internship Information System | Figma • UI/UX |
+| 📊 KPI Dashboard | Laravel • PostgreSQL |
+| 🌦 Weather Radar | React • API |
 | 🎬 Movie List App | React + Vite |
-| 🛒 E-Commerce Website | React + Vite |
+| 🚗 Car Rental Website | HTML • CSS • JavaScript |
+
+---
+
+# 🎨 UI/UX Portfolio
+
+<div align="center">
+
+### 🏫 SIRKUS — Classroom Reservation System
+
+<a href="https://www.figma.com/proto/TPoqoBxs7DxcWI9TsgiNYY/SIRKUS--Aplikasi-Peminjaman-Ruang-Kelas-FASILKOM-?node-id=1-1286&p=f">
+<img src="https://img.shields.io/badge/🚀%20View%20Interactive%20Prototype-F24E1E?style=for-the-badge&logo=figma&logoColor=white"/>
+</a>
+
+<br><br>
+
+### 💼 Internship Information System
+
+<a href="https://www.figma.com/proto/clhB3zdJFbRvtfHA6GbcZa/Aplikasi-MAGANG-SI?node-id=466-13571&p=f">
+<img src="https://img.shields.io/badge/🚀%20View%20Interactive%20Prototype-F24E1E?style=for-the-badge&logo=figma&logoColor=white"/>
+</a>
+
+</div>
 
 ---
 
 # 💻 Tech Stack
 
-<p align="center">
+<div align="center">
 
 <img src="https://skillicons.dev/icons?i=html,css,js,php,laravel,bootstrap,react,mysql,postgres,git,github,vscode,figma,postman"/>
 
-</p>
+</div>
 
 ---
 
 # 📜 Certifications
 
-- IBM – Web Development Fundamentals
-- Hactiv8 – Fullstack Web Development
-- Hactiv8 – ReactJS
-- Hactiv8 – JavaScript Asynchronous
-- Hactiv8 – Advanced Algorithm
-- SoloLearn – SQL
-- Udemy – UI Design
-- Udemy – MongoDB
-- Udemy – REST API
-- Udemy – Weather App Development
+- IBM — Web Development Fundamentals
+- Hactiv8 — Full Stack Web Development
+- Hactiv8 — ReactJS
+- Hactiv8 — JavaScript Asynchronous
+- Hactiv8 — Advanced Algorithm
+- SoloLearn — SQL
+- Udemy — UI Design
+- Udemy — MongoDB
+- Udemy — REST API Development
+- Udemy — Weather App Development
 
 ---
 
 # 📊 GitHub Analytics
 
-<p align="center">
+<div align="center">
 
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=nazrfjri&show_icons=true&theme=tokyonight&hide_border=true"/>
+<img height="165" src="https://github-readme-stats.vercel.app/api?username=nazrfjri&show_icons=true&theme=tokyonight&hide_border=true"/>
 
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=nazrfjri&layout=compact&theme=tokyonight&hide_border=true"/>
+<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=nazrfjri&layout=compact&theme=tokyonight&hide_border=true"/>
 
-</p>
+</div>
 
 ---
 
 # 🔥 GitHub Streak
 
-<p align="center">
+<div align="center">
 
 <img src="https://streak-stats.demolab.com?user=nazrfjri&theme=tokyonight&hide_border=true"/>
 
-</p>
+</div>
 
 ---
 
 # 📈 Contribution Graph
 
-<p align="center">
+<div align="center">
 
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=nazrfjri&theme=tokyo-night&hide_border=true"/>
 
-</p>
+</div>
 
 ---
 
-# 🏆 GitHub Trophies
+# 🏆 GitHub Trophy
 
-<p align="center">
+<div align="center">
 
-<img src="https://github-profile-trophy.vercel.app/?username=nazrfjri&theme=tokyonight&column=4&margin-w=15&margin-h=15&no-frame=true"/>
+<img src="https://github-profile-trophy.vercel.app/?username=nazrfjri&theme=tokyonight&column=4&no-frame=true"/>
 
-</p>
+</div>
 
 ---
 
-# 🎯 Current Focus
+# 🎯 Currently Learning
 
-- 🚀 Building scalable Laravel applications
-- 📈 Backend API Development
-- 🗄 Database Optimization
-- 🎨 Better UI/UX
-- ☁ Learning modern deployment workflows
+- 🚀 Laravel Ecosystem
+- ⚙ REST API Development
+- ☁ Cloud Deployment
+- 📊 Database Optimization
+- 🎨 UI/UX Design
+- ⚡ Software Architecture
 
 ---
 
 <div align="center">
 
-### 💙 Thanks for visiting my profile!
+### 💙 Thanks for visiting!
 
-*"Code. Learn. Improve. Repeat."*
+*"Building software is not only about writing code, but also creating meaningful experiences."*
 
 </div>

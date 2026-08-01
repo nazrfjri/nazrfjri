@@ -22,6 +22,9 @@ const categories = [
 ];
 
 const Projects = () => {
+  // ==========================
+  // FEATURED PROJECTS STATE
+  // ==========================
   const featuredProjects = useMemo(
     () =>
       projectsData.filter(
@@ -32,9 +35,6 @@ const Projects = () => {
 
   const [currentSlide, setCurrentSlide] =
     useState(0);
-
-  const [activeCategory, setActiveCategory] =
-    useState("All");
 
   const nextSlide = () => {
     setCurrentSlide((prev) =>
@@ -52,6 +52,18 @@ const Projects = () => {
     );
   };
 
+  // ==========================
+  // ALL PROJECTS STATE (NEW)
+  // ==========================
+  const [activeCategory, setActiveCategory] =
+    useState("All");
+
+  const [currentAllSlide, setCurrentAllSlide] =
+    useState(0);
+
+  const itemsPerPage = 2;
+
+  // Filter based on category
   const filteredProjects =
     activeCategory === "All"
       ? projectsData.filter(
@@ -62,6 +74,35 @@ const Projects = () => {
             !project.featured &&
             project.category === activeCategory
         );
+
+  // Pagination Logic
+  const totalAllSlides = Math.ceil(
+    filteredProjects.length / itemsPerPage
+  );
+
+  const currentFilteredProjects =
+    filteredProjects.slice(
+      currentAllSlide * itemsPerPage,
+      (currentAllSlide + 1) * itemsPerPage
+    );
+
+  const nextAllSlide = () => {
+    setCurrentAllSlide((prev) =>
+      prev === totalAllSlides - 1 ? 0 : prev + 1
+    );
+  };
+
+  const prevAllSlide = () => {
+    setCurrentAllSlide((prev) =>
+      prev === 0 ? totalAllSlides - 1 : prev - 1
+    );
+  };
+
+  // Reset pagination when category changes
+  const handleCategoryChange = (category) => {
+    setActiveCategory(category);
+    setCurrentAllSlide(0);
+  };
 
   return (
     <section
@@ -87,7 +128,7 @@ const Projects = () => {
 
       <Container>
 
-        {/* Featured */}
+        {/* Featured Section */}
 
         <SectionTitle
           subtitle="Portfolio"
@@ -156,11 +197,13 @@ const Projects = () => {
                 project={
                   featuredProjects[currentSlide]
                 }
+                featuredView={true}
               />
             </motion.div>
 
           </AnimatePresence>
 
+          {/* Featured Pagination Dots */}
           <div className="mt-8 flex justify-center gap-3">
 
             {featuredProjects.map(
@@ -190,41 +233,46 @@ const Projects = () => {
 
         </div>
 
-        {/* Other Projects */}
+        {/* Other Projects Section */}
 
         <SectionTitle
           subtitle="More Projects"
           title="All Projects"
         />
 
-        {/* Filter */}
+        {/* Filter & Controls Container */}
 
-        <div className="mb-12 flex justify-center lg:justify-start">
+        <div
+          className="
+            mb-12
+            flex
+            flex-col
+            justify-between
+            gap-6
+            lg:flex-row
+            lg:items-center
+          "
+        >
 
+          {/* Category Filter */}
           <div
             className="
               flex
               flex-wrap
               gap-2
-
               rounded-full
-
               border
               border-slate-700
-
               bg-slate-900/60
-
               p-2
-
               backdrop-blur-xl
             "
           >
-
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() =>
-                  setActiveCategory(category)
+                  handleCategoryChange(category)
                 }
                 className="
                   relative
@@ -266,58 +314,120 @@ const Projects = () => {
 
               </button>
             ))}
-
           </div>
 
+          {/* All Projects Slider Controls (Arrows) */}
+          {totalAllSlides > 1 && (
+            <div className="flex items-center gap-3">
+
+              <button
+                onClick={prevAllSlide}
+                className="
+                  rounded-full
+                  border
+                  border-slate-700
+                  p-3
+                  text-slate-300
+                  transition
+                  hover:border-blue-500
+                  hover:text-white
+                "
+              >
+                <ChevronLeft size={20} />
+              </button>
+
+              <button
+                onClick={nextAllSlide}
+                className="
+                  rounded-full
+                  border
+                  border-slate-700
+                  p-3
+                  text-slate-300
+                  transition
+                  hover:border-blue-500
+                  hover:text-white
+                "
+              >
+                <ChevronRight size={20} />
+              </button>
+
+            </div>
+          )}
+
         </div>
+
+        {/* All Projects Slider Grid */}
 
         <AnimatePresence mode="wait">
 
           <motion.div
-            key={activeCategory}
+            key={`${activeCategory}-${currentAllSlide}`}
             initial={{
               opacity: 0,
+              y: 30,
             }}
             animate={{
               opacity: 1,
+              y: 0,
             }}
             exit={{
               opacity: 0,
+              y: -30,
+            }}
+            transition={{
+              duration: 0.35,
             }}
             className="
               grid
               gap-8
-
               lg:grid-cols-2
             "
           >
 
-            {filteredProjects.map(
-              (project, index) => (
-                <motion.div
+            {currentFilteredProjects.map(
+              (project) => (
+                <ProjectCard
                   key={project.title}
-                  initial={{
-                    opacity: 0,
-                    y: 30,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    delay: index * 0.08,
-                  }}
-                >
-                  <ProjectCard
-                    project={project}
-                  />
-                </motion.div>
+                  project={project}
+                />
               )
             )}
 
           </motion.div>
 
         </AnimatePresence>
+
+        {/* All Projects Pagination Dots */}
+        
+        {totalAllSlides > 1 && (
+          <div className="mt-12 flex justify-center gap-3">
+
+            {Array.from({ length: totalAllSlides }).map(
+              (_, index) => (
+                <button
+                  key={index}
+                  onClick={() =>
+                    setCurrentAllSlide(index)
+                  }
+                  className={`
+                    h-2.5
+                    rounded-full
+                    transition-all
+                    duration-300
+
+                    ${
+                      currentAllSlide === index
+                        ? "w-10 bg-blue-500"
+                        : "w-2.5 bg-slate-600 hover:bg-slate-500"
+                    }
+                  `}
+                />
+              )
+            )}
+
+          </div>
+        )}
 
       </Container>
 

@@ -2,12 +2,11 @@ import { motion } from "framer-motion";
 import {
   ExternalLink,
   Star,
-  Figma,
   Code2,
   Palette,
 } from "lucide-react";
 
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaFigma } from "react-icons/fa";
 
 const categoryIcon = {
   "Web Development": <Code2 size={14} />,
@@ -67,6 +66,7 @@ const ProjectCard = ({
 
       <div
         className="
+          pointer-events-none
           absolute
           inset-0
           bg-gradient-to-br
@@ -147,14 +147,15 @@ const ProjectCard = ({
               font-semibold
               text-white
               shadow-lg
-            >
-              <Star
-                size={13}
-                fill="white"
-              />
+            "
+          >
+            <Star
+              size={13}
+              fill="white"
+            />
 
-              Featured
-            </div>
+            Featured
+          </div>
         )}
 
         {/* Image */}
@@ -185,7 +186,7 @@ const ProjectCard = ({
 
       {/* Content */}
 
-      <div className="flex flex-1 flex-col p-8">
+      <div className="relative z-10 flex flex-1 flex-col p-8">
 
         <h3
           className={`
@@ -304,7 +305,7 @@ const ProjectCard = ({
                 hover:border-blue-500
               "
             >
-              <FaGithub />
+              <FaGithub size={18} />
 
               GitHub
             </motion.a>
@@ -366,7 +367,7 @@ const ProjectCard = ({
                 hover:bg-pink-700
               "
             >
-              <Figma size={18} />
+              <FaFigma size={18} />
 
               View Prototype
             </motion.a>

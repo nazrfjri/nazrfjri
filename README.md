@@ -1,16 +1,161 @@
-# React + Vite
+<h1 align="center">
+  👋 Hi, I'm Eka Nazar Fajriansyah
+</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h3 align="center">
+Full-Stack Web Developer • Laravel Developer • UI/UX Enthusiast
+</h3>
 
-Currently, two official plugins are available:
+<p align="center">
+Fresh Graduate in Information Systems with nearly 2 years of internship experience in Information Technology and Knowledge Management. Passionate about building scalable web applications, creating intuitive user experiences, and continuously learning modern web technologies.
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🌐 Portfolio
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🔗 **Live Portfolio**
 
-## Expanding the ESLint configuration
+https://nazrfjri.vercel.app/
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 👨‍💻 About Me
+
+- 🎓 Fresh Graduate in Information Systems
+- 📍 Karawang, Indonesia
+- 💼 Nearly 2 Years Internship Experience
+- 🌱 Currently learning advanced React ecosystem and backend architecture
+- ❤️ Interested in Web Development and UI/UX Design
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+
+<p>
+<img src="https://skillicons.dev/icons?i=html,css,js,react,vite,tailwind,bootstrap" />
+</p>
+
+### Backend
+
+<p>
+<img src="https://skillicons.dev/icons?i=php,laravel" />
+</p>
+
+### Database
+
+<p>
+<img src="https://skillicons.dev/icons?i=mysql,postgresql" />
+</p>
+
+### Design & Tools
+
+<p>
+<img src="https://skillicons.dev/icons?i=figma,git,github,vscode" />
+</p>
+
+---
+
+# 🚀 Featured Projects
+
+### 📚 SIRKUS Classroom Booking
+
+UI/UX Prototype and Web Application for classroom reservation system using Design Thinking methodology.
+
+**Tech**
+
+- Laravel
+- Bootstrap
+- MySQL
+- Figma
+
+---
+
+### 📦 E-Inventaris
+
+Inventory Management System for asset tracking, stock management, and reporting.
+
+**Tech**
+
+- Laravel
+- PostgreSQL
+- Bootstrap
+- PHP
+
+---
+
+### 🌦 Weather Forecast
+
+Responsive weather application using REST API.
+
+**Tech**
+
+- React
+- Tailwind CSS
+- JavaScript
+
+---
+
+### 🎬 Movie App
+
+Movie discovery application powered by public APIs.
+
+**Tech**
+
+- React
+- JavaScript
+- Vite
+
+---
+
+### 🛒 E-Commerce React
+
+Modern shopping application built with React and Redux.
+
+**Tech**
+
+- React
+- Redux
+- Vite
+
+---
+
+## 📈 GitHub Stats
+
+<p align="center">
+
+<img height="170" src="https://github-readme-stats.vercel.app/api?username=nazrfjri&show_icons=true&theme=tokyonight&hide_border=true"/>
+
+<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=nazrfjri&layout=compact&theme=tokyonight&hide_border=true"/>
+
+</p>
+
+---
+
+## 📫 Connect with Me
+
+Portfolio
+
+https://nazrfjri.vercel.app/
+
+LinkedIn
+
+https://linkedin.com/in/nazrfjr
+
+GitHub
+
+https://github.com/nazrfjri
+
+Email
+
+ekanazarfajriansyah@gmail.com
+
+---
+
+<p align="center">
+
+⭐ Thank you for visiting my GitHub profile!
+
+</p>

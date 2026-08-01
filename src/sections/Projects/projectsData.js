@@ -89,7 +89,7 @@ const projectsData = [
     description:
       "Developed a web application for creating and managing articles and blogs, featuring user authentication, content management, and responsive design.",
 
-    image: atricleImg,
+    image: articleImg,
 
     technologies: [
       {

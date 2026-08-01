@@ -2,19 +2,45 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 import Hero from "@/sections/Hero/Hero";
+import About from "@/sections/About/About";
+import Experience from "@/sections/Experience/Experience";
+import Skills from "@/sections/Skills/Skills";
+import Projects from "@/sections/Projects/Projects";
+import Contact from "@/sections/Contact/Contact";
 
-function Home() {
+const Home = () => {
   return (
     <>
+      {/* Navigation */}
       <Navbar />
 
-      <main className="bg-background">
+      {/* Main Content */}
+      <main
+        id="home"
+        className="
+          relative
+          min-h-screen
+          overflow-x-hidden
+          bg-background
+        "
+      >
         <Hero />
+
+        <About />
+
+        <Experience />
+
+        <Skills />
+
+        <Projects />
+
+        <Contact />
       </main>
 
+      {/* Footer */}
       <Footer />
     </>
   );
-}
+};
 
 export default Home;

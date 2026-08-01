@@ -5,8 +5,10 @@ import HeroImage from "./HeroImage";
 
 const Hero = () => {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden">
-
+    <section
+      id="home"
+      className="relative flex min-h-screen items-center overflow-hidden"
+    >
       {/* Grid Background */}
       <div
         className="
@@ -41,29 +43,41 @@ const Hero = () => {
 
       <Container
         className="
-            grid
-            items-center
-            gap-16
-            py-24
-            lg:grid-cols-2
+          grid
+          items-center
+          gap-16
+          py-24
+          lg:grid-cols-2
         "
-        >
+      >
         <HeroContent />
         <HeroImage />
       </Container>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-        <div className="flex flex-col items-center gap-3">
-          <span className="text-xs tracking-[0.4em] text-slate-500">
-            SCROLL
-          </span>
+      {/* Scroll */}
+      <a
+        href="#about"
+        className="
+          absolute
+          bottom-8
+          left-1/2
+          flex
+          -translate-x-1/2
+          flex-col
+          items-center
+          gap-3
+          transition-opacity
+          hover:opacity-80
+        "
+      >
+        {/* <span className="text-xs tracking-[0.4em] text-slate-500">
+          SCROLL
+        </span>
 
-          <div className="flex h-12 w-7 justify-center rounded-full border border-slate-700">
-            <div className="mt-2 h-2 w-2 animate-bounce rounded-full bg-blue-500"></div>
-          </div>
-        </div>
-      </div>
+        <div className="flex h-12 w-7 justify-center rounded-full border border-slate-700">
+          <div className="mt-2 h-2 w-2 animate-bounce rounded-full bg-blue-500" />
+        </div> */}
+      </a>
     </section>
   );
 };

@@ -5,10 +5,23 @@ import { profile } from "@/data/profile";
 import Button from "@/components/ui/Button";
 
 const HeroContent = () => {
+  const sequence = [];
+
+  profile.title.forEach((title) => {
+    sequence.push(title);
+    sequence.push(2000);
+  });
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{
+        opacity: 0,
+        y: 40,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
       transition={{
         duration: 0.8,
         ease: "easeOut",
@@ -16,17 +29,53 @@ const HeroContent = () => {
       className="text-center lg:text-left"
     >
       {/* Greeting */}
-      <p className="mb-6 text-xs font-semibold uppercase tracking-[0.3em] text-blue-400 sm:text-sm">
-        👋 Hello, I'm
-      </p>
+
+      <motion.p
+        initial={{
+          opacity: 0,
+          y: 10,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          delay: 0.15,
+        }}
+        className="
+          mb-6
+          text-xs
+          font-semibold
+          uppercase
+          tracking-[0.3em]
+          text-blue-400
+
+          sm:text-sm
+        "
+      >
+        Hello, I'm
+      </motion.p>
 
       {/* Name */}
-      <h1
+
+      <motion.h1
+        initial={{
+          opacity: 0,
+          y: 15,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          delay: 0.25,
+        }}
         className="
           mb-8
+
           text-4xl
           font-black
-          leading-tight
+          leading-[1.05]
           tracking-tight
 
           sm:text-5xl
@@ -43,51 +92,78 @@ const HeroContent = () => {
         "
       >
         {profile.name}
-      </h1>
+      </motion.h1>
 
       {/* Animated Title */}
+
       <TypeAnimation
-        sequence={[
-          "Full-Stack Web Developer",
-          2000,
-          "UI/UX Designer",
-          2000,
-          "Laravel Developer",
-          2000,
-        ]}
-        speed={30}
+        sequence={sequence}
+        speed={40}
         repeat={Infinity}
+        wrapper="h2"
         className="
+          min-h-[48px]
+
           text-xl
           font-semibold
           text-slate-300
 
+          sm:min-h-[56px]
           sm:text-2xl
+
+          lg:min-h-[60px]
           lg:text-3xl
         "
       />
 
       {/* Description */}
-      <p
+
+      <motion.p
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+        }}
+        transition={{
+          delay: 0.45,
+        }}
         className="
           mx-auto
           mt-8
-          max-w-xl
+
+          max-w-2xl
+
           text-base
           leading-8
           text-slate-400
 
           sm:text-lg
+
           lg:mx-0
+          lg:max-w-xl
         "
       >
         {profile.description}
-      </p>
+      </motion.p>
 
       {/* Buttons */}
-      <div
+
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: 20,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          delay: 0.6,
+        }}
         className="
           mt-10
+
           flex
           flex-col
           items-center
@@ -99,16 +175,25 @@ const HeroContent = () => {
           lg:justify-start
         "
       >
-        <a href="/cv.pdf" download>
-          <Button>Download CV</Button>
+        <a
+          href={profile.cv}
+          download
+          aria-label="Download CV"
+        >
+          <Button>
+            Download CV
+          </Button>
         </a>
 
-        <a href="#projects">
+        <a
+          href="#projects"
+          aria-label="View Projects"
+        >
           <Button variant="secondary">
             View Projects
           </Button>
         </a>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };

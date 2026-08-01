@@ -19,7 +19,7 @@ import {
 } from "react-icons/si";
 
 import ecommerceImg from "@/assets/images/ecommerce.png";
-import atricleImg from "@/assets/images/webarticle.png";
+import articleImg from "@/assets/images/webarticle.png";
 import movieImg from "@/assets/images/movie.png";
 import inventarisImg from "@/assets/images/inventaris.png";
 import trackerImg from "@/assets/images/covidtracker.png";

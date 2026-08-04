@@ -1,45 +1,48 @@
 import { motion } from "framer-motion";
-
 import contactData from "./contactData";
 
 const AvailabilityIcon = contactData.availability.icon;
 
+// Varian untuk Stagger Effect
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15, delayChildren: 0.1 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
 const ContactInfo = () => {
   return (
     <motion.div
-      initial={{
-        opacity: 0,
-        y: 40,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      viewport={{
-        once: true,
-      }}
-      transition={{
-        duration: 0.6,
-      }}
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-50px" }}
       className="mx-auto max-w-3xl text-center"
     >
       {/* Heading */}
-
-      <p className="text-sm font-semibold uppercase tracking-[0.35em] text-blue-400">
+      <motion.p variants={itemVariants} className="text-sm font-semibold uppercase tracking-[0.35em] text-blue-400">
         {contactData.heading.subtitle}
-      </p>
+      </motion.p>
 
-      <h2 className="mt-5 text-5xl font-black leading-tight text-white">
-        {contactData.heading.title}
-      </h2>
+      <motion.h2 variants={itemVariants} className="mt-5 text-4xl font-black leading-tight tracking-tight sm:text-5xl">
+        <span className="bg-gradient-to-br from-white to-slate-400 bg-clip-text text-transparent">
+          {contactData.heading.title}
+        </span>
+      </motion.h2>
 
-      <p className="mx-auto mt-8 max-w-2xl leading-8 text-slate-400">
+      <motion.p variants={itemVariants} className="mx-auto mt-8 max-w-2xl leading-8 text-slate-400">
         {contactData.heading.description}
-      </p>
+      </motion.p>
 
       {/* Contact List */}
-
-      <div className="mt-16 space-y-5">
+      <motion.div variants={itemVariants} className="mt-16 space-y-5">
         {contactData.info.map((item) => {
           const Icon = item.icon;
 
@@ -49,14 +52,15 @@ const ContactInfo = () => {
               href={item.href}
               target="_blank"
               rel="noreferrer"
-              whileHover={{
-                scale: 1.02,
-              }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               className="
                 group
+                relative
                 flex
                 items-center
                 justify-between
+                overflow-hidden
                 rounded-2xl
                 border
                 border-slate-800
@@ -66,35 +70,43 @@ const ContactInfo = () => {
                 backdrop-blur-xl
                 transition-all
                 duration-300
-                hover:border-blue-500
-                hover:bg-slate-900/70
+                hover:border-blue-500/50
+                hover:shadow-[0_0_30px_rgba(37,99,235,.15)]
               "
             >
-              <div className="flex items-center gap-5">
+              {/* Inner Hover Glow */}
+              <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/5 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+              <div className="relative z-10 flex items-center gap-5">
                 <div
                   className="
                     flex
-                    h-12
-                    w-12
+                    h-13
+                    w-13
                     items-center
                     justify-center
                     rounded-xl
                     bg-blue-500/10
+                    p-3
                     text-blue-400
-                    transition
+                    ring-1
+                    ring-inset
+                    ring-blue-500/20
+                    transition-all
+                    duration-300
                     group-hover:bg-blue-500
                     group-hover:text-white
+                    group-hover:ring-blue-500
                   "
                 >
-                  <Icon size={22} />
+                  <Icon size={24} />
                 </div>
 
                 <div className="text-left">
-                  <p className="text-sm text-slate-500">
+                  <p className="text-sm font-medium text-slate-500 transition-colors group-hover:text-slate-400">
                     {item.title}
                   </p>
-
-                  <p className="font-medium text-white break-all">
+                  <p className="mt-1 font-semibold tracking-wide text-slate-200 transition-colors group-hover:text-white break-all">
                     {item.value}
                   </p>
                 </div>
@@ -102,11 +114,10 @@ const ContactInfo = () => {
             </motion.a>
           );
         })}
-      </div>
+      </motion.div>
 
-      {/* Availability */}
-
-      <div className="mt-14 flex justify-center">
+      {/* Availability Status */}
+      <motion.div variants={itemVariants} className="mt-14 flex justify-center">
         <div
           className="
             inline-flex
@@ -119,19 +130,24 @@ const ContactInfo = () => {
             px-5
             py-3
             text-emerald-400
+            shadow-[0_0_20px_rgba(16,185,129,.1)]
           "
         >
-          <AvailabilityIcon size={18} />
+          {/* Live Pinging Dot */}
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
+          </span>
 
-          <span className="font-medium">
+          <AvailabilityIcon size={18} />
+          <span className="font-semibold tracking-wide">
             {contactData.availability.description}
           </span>
         </div>
-      </div>
+      </motion.div>
 
-      {/* Social */}
-
-      <div className="mt-12 flex justify-center gap-5">
+      {/* Socials */}
+      <motion.div variants={itemVariants} className="mt-12 flex justify-center gap-5">
         {contactData.socials.map((item) => {
           const Icon = item.icon;
 
@@ -141,22 +157,20 @@ const ContactInfo = () => {
               href={item.href}
               target="_blank"
               rel="noreferrer"
-              whileHover={{
-                y: -5,
-                scale: 1.08,
-              }}
-              whileTap={{
-                scale: 0.95,
-              }}
+              whileHover={{ y: -6, scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
               className="
+                group
+                relative
                 flex
                 h-14
                 w-14
                 items-center
                 justify-center
+                overflow-hidden
                 rounded-2xl
                 border
-                border-slate-700
+                border-slate-700/60
                 bg-slate-900/40
                 text-slate-300
                 backdrop-blur-xl
@@ -165,13 +179,14 @@ const ContactInfo = () => {
                 hover:border-blue-500
                 hover:bg-blue-500
                 hover:text-white
+                hover:shadow-[0_0_25px_rgba(37,99,235,.4)]
               "
             >
-              <Icon size={22} />
+              <Icon size={22} className="relative z-10" />
             </motion.a>
           );
         })}
-      </div>
+      </motion.div>
     </motion.div>
   );
 };

@@ -1,13 +1,6 @@
 import { useMemo, useState } from "react";
-import {
-  AnimatePresence,
-  motion,
-} from "framer-motion";
-
-import {
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -15,422 +8,171 @@ import SectionTitle from "@/components/ui/SectionTitle";
 import ProjectCard from "./ProjectCard";
 import projectsData from "./projectsData";
 
-const categories = [
-  "All",
-  "Web Development",
-  "UI/UX Design",
-];
+const categories = ["All", "Web Development", "UI/UX Design"];
 
 const Projects = () => {
-  // ==========================
   // FEATURED PROJECTS STATE
-  // ==========================
-  const featuredProjects = useMemo(
-    () =>
-      projectsData.filter(
-        (project) => project.featured
-      ),
-    []
-  );
+  const featuredProjects = useMemo(() => projectsData.filter((p) => p.featured), []);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-  const [currentSlide, setCurrentSlide] =
-    useState(0);
+  const nextSlide = () => setCurrentSlide((prev) => (prev === featuredProjects.length - 1 ? 0 : prev + 1));
+  const prevSlide = () => setCurrentSlide((prev) => (prev === 0 ? featuredProjects.length - 1 : prev - 1));
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) =>
-      prev === featuredProjects.length - 1
-        ? 0
-        : prev + 1
-    );
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) =>
-      prev === 0
-        ? featuredProjects.length - 1
-        : prev - 1
-    );
-  };
-
-  // ==========================
-  // ALL PROJECTS STATE (NEW)
-  // ==========================
-  const [activeCategory, setActiveCategory] =
-    useState("All");
-
-  const [currentAllSlide, setCurrentAllSlide] =
-    useState(0);
-
+  // ALL PROJECTS STATE
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [currentAllSlide, setCurrentAllSlide] = useState(0);
   const itemsPerPage = 2;
 
-  // Filter based on category
-  const filteredProjects =
-    activeCategory === "All"
-      ? projectsData.filter(
-          (project) => !project.featured
-        )
-      : projectsData.filter(
-          (project) =>
-            !project.featured &&
-            project.category === activeCategory
-        );
+  const filteredProjects = activeCategory === "All"
+    ? projectsData.filter((p) => !p.featured)
+    : projectsData.filter((p) => !p.featured && p.category === activeCategory);
 
-  // Pagination Logic
-  const totalAllSlides = Math.ceil(
-    filteredProjects.length / itemsPerPage
+  const totalAllSlides = Math.ceil(filteredProjects.length / itemsPerPage);
+  const currentFilteredProjects = filteredProjects.slice(
+    currentAllSlide * itemsPerPage,
+    (currentAllSlide + 1) * itemsPerPage
   );
 
-  const currentFilteredProjects =
-    filteredProjects.slice(
-      currentAllSlide * itemsPerPage,
-      (currentAllSlide + 1) * itemsPerPage
-    );
+  const nextAllSlide = () => setCurrentAllSlide((prev) => (prev === totalAllSlides - 1 ? 0 : prev + 1));
+  const prevAllSlide = () => setCurrentAllSlide((prev) => (prev === 0 ? totalAllSlides - 1 : prev - 1));
 
-  const nextAllSlide = () => {
-    setCurrentAllSlide((prev) =>
-      prev === totalAllSlides - 1 ? 0 : prev + 1
-    );
-  };
-
-  const prevAllSlide = () => {
-    setCurrentAllSlide((prev) =>
-      prev === 0 ? totalAllSlides - 1 : prev - 1
-    );
-  };
-
-  // Reset pagination when category changes
   const handleCategoryChange = (category) => {
     setActiveCategory(category);
     setCurrentAllSlide(0);
   };
 
   return (
-    <section
-      id="projects"
-      className="relative overflow-hidden py-32"
-    >
-      {/* Glow */}
-
-      <div
-        className="
-          absolute
-          left-1/2
-          top-20
-          -z-10
-          h-[450px]
-          w-[450px]
-          -translate-x-1/2
-          rounded-full
-          bg-blue-600/10
-          blur-[190px]
-        "
-      />
-
-      <Container>
-
-        {/* Featured Section */}
-
-        <SectionTitle
-          subtitle="Portfolio"
-          title="Featured Projects"
+    <section id="projects" className="relative overflow-hidden py-32">
+      {/* Ambient Animated Glow */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <motion.div
+          animate={{ scale: [1, 1.1, 1], opacity: [0.15, 0.3, 0.15] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute left-1/2 top-40 -z-10 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-blue-600/10 blur-[200px]"
         />
+      </div>
 
-        <div className="mb-14">
+      <Container className="relative z-10">
+        {/* Featured Section */}
+        <SectionTitle subtitle="Portfolio" title="Featured Projects" />
 
+        <div className="mb-20">
           <div className="mb-8 flex items-center justify-end gap-3">
-
             <button
               onClick={prevSlide}
-              className="
-                rounded-full
-                border
-                border-slate-700
-                p-3
-                text-slate-300
-                transition
-                hover:border-blue-500
-                hover:text-white
-              "
+              className="group flex h-12 w-12 items-center justify-center rounded-full border border-slate-700 bg-slate-900/50 text-slate-400 backdrop-blur-md transition-all hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-400 hover:shadow-[0_0_20px_rgba(37,99,235,.2)]"
             >
-              <ChevronLeft size={20} />
+              <ChevronLeft size={20} className="transition-transform group-hover:-translate-x-1" />
             </button>
-
             <button
               onClick={nextSlide}
-              className="
-                rounded-full
-                border
-                border-slate-700
-                p-3
-                text-slate-300
-                transition
-                hover:border-blue-500
-                hover:text-white
-              "
+              className="group flex h-12 w-12 items-center justify-center rounded-full border border-slate-700 bg-slate-900/50 text-slate-400 backdrop-blur-md transition-all hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-400 hover:shadow-[0_0_20px_rgba(37,99,235,.2)]"
             >
-              <ChevronRight size={20} />
+              <ChevronRight size={20} className="transition-transform group-hover:translate-x-1" />
             </button>
-
           </div>
 
           <AnimatePresence mode="wait">
-
             <motion.div
               key={featuredProjects[currentSlide].title}
-              initial={{
-                opacity: 0,
-                x: 80,
-              }}
-              animate={{
-                opacity: 1,
-                x: 0,
-              }}
-              exit={{
-                opacity: 0,
-                x: -80,
-              }}
-              transition={{
-                duration: 0.45,
-              }}
+              initial={{ opacity: 0, scale: 0.98, filter: "blur(10px)" }}
+              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              exit={{ opacity: 0, scale: 1.02, filter: "blur(10px)" }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
             >
-              <ProjectCard
-                project={
-                  featuredProjects[currentSlide]
-                }
-                featuredView={true}
-              />
+              <ProjectCard project={featuredProjects[currentSlide]} featuredView={true} />
             </motion.div>
-
           </AnimatePresence>
 
-          {/* Featured Pagination Dots */}
-          <div className="mt-8 flex justify-center gap-3">
-
-            {featuredProjects.map(
-              (_, index) => (
-                <button
-                  key={index}
-                  onClick={() =>
-                    setCurrentSlide(index)
-                  }
-                  className={`
-                    h-2.5
-                    rounded-full
-                    transition-all
-                    duration-300
-
-                    ${
-                      currentSlide === index
-                        ? "w-10 bg-blue-500"
-                        : "w-2.5 bg-slate-600 hover:bg-slate-500"
-                    }
-                  `}
-                />
-              )
-            )}
-
+          <div className="mt-10 flex justify-center gap-3">
+            {featuredProjects.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`h-2.5 rounded-full transition-all duration-500 ${
+                  currentSlide === index ? "w-12 bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.8)]" : "w-3 bg-slate-700 hover:bg-slate-500"
+                }`}
+              />
+            ))}
           </div>
-
         </div>
 
         {/* Other Projects Section */}
+        <SectionTitle subtitle="More Projects" title="All Projects" />
 
-        <SectionTitle
-          subtitle="More Projects"
-          title="All Projects"
-        />
-
-        {/* Filter & Controls Container */}
-
-        <div
-          className="
-            mb-12
-            flex
-            flex-col
-            justify-between
-            gap-6
-            lg:flex-row
-            lg:items-center
-          "
-        >
-
+        <div className="mb-12 flex flex-col justify-between gap-6 lg:flex-row lg:items-center">
           {/* Category Filter */}
-          <div
-            className="
-              flex
-              flex-wrap
-              gap-2
-              rounded-full
-              border
-              border-slate-700
-              bg-slate-900/60
-              p-2
-              backdrop-blur-xl
-            "
-          >
+          <div className="flex flex-wrap gap-2 rounded-full border border-slate-700/60 bg-slate-900/40 p-2 backdrop-blur-xl">
             {categories.map((category) => (
               <button
                 key={category}
-                onClick={() =>
-                  handleCategoryChange(category)
-                }
-                className="
-                  relative
-                  rounded-full
-                  px-5
-                  py-2.5
-                  text-sm
-                  font-medium
-                "
+                onClick={() => handleCategoryChange(category)}
+                className="relative rounded-full px-6 py-2.5 text-sm font-semibold tracking-wide transition-colors"
               >
-
-                {activeCategory ===
-                  category && (
+                {activeCategory === category && (
                   <motion.div
                     layoutId="active-filter"
-                    transition={{
-                      type: "spring",
-                      stiffness: 320,
-                      damping: 30,
-                    }}
-                    className="
-                      absolute
-                      inset-0
-                      rounded-full
-                      bg-blue-600
-                    "
+                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                    className="absolute inset-0 rounded-full bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,.4)]"
                   />
                 )}
-
-                <span
-                  className={`relative z-10 ${
-                    activeCategory === category
-                      ? "text-white"
-                      : "text-slate-400"
-                  }`}
-                >
+                <span className={`relative z-10 ${activeCategory === category ? "text-white" : "text-slate-400 hover:text-slate-200"}`}>
                   {category}
                 </span>
-
               </button>
             ))}
           </div>
 
-          {/* All Projects Slider Controls (Arrows) */}
+          {/* All Projects Slider Controls */}
           {totalAllSlides > 1 && (
             <div className="flex items-center gap-3">
-
               <button
                 onClick={prevAllSlide}
-                className="
-                  rounded-full
-                  border
-                  border-slate-700
-                  p-3
-                  text-slate-300
-                  transition
-                  hover:border-blue-500
-                  hover:text-white
-                "
+                className="group flex h-11 w-11 items-center justify-center rounded-full border border-slate-700 bg-slate-900/50 text-slate-400 backdrop-blur-md transition-all hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-400"
               >
-                <ChevronLeft size={20} />
+                <ChevronLeft size={18} className="transition-transform group-hover:-translate-x-1" />
               </button>
-
               <button
                 onClick={nextAllSlide}
-                className="
-                  rounded-full
-                  border
-                  border-slate-700
-                  p-3
-                  text-slate-300
-                  transition
-                  hover:border-blue-500
-                  hover:text-white
-                "
+                className="group flex h-11 w-11 items-center justify-center rounded-full border border-slate-700 bg-slate-900/50 text-slate-400 backdrop-blur-md transition-all hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-400"
               >
-                <ChevronRight size={20} />
+                <ChevronRight size={18} className="transition-transform group-hover:translate-x-1" />
               </button>
-
             </div>
           )}
-
         </div>
 
-        {/* All Projects Slider Grid */}
-
+        {/* All Projects Grid */}
         <AnimatePresence mode="wait">
-
           <motion.div
             key={`${activeCategory}-${currentAllSlide}`}
-            initial={{
-              opacity: 0,
-              y: 30,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            exit={{
-              opacity: 0,
-              y: -30,
-            }}
-            transition={{
-              duration: 0.35,
-            }}
-            className="
-              grid
-              gap-8
-              lg:grid-cols-2
-            "
+            initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            exit={{ opacity: 0, y: -40, filter: "blur(8px)" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="grid gap-8 lg:grid-cols-2"
           >
-
-            {currentFilteredProjects.map(
-              (project) => (
-                <ProjectCard
-                  key={project.title}
-                  project={project}
-                />
-              )
-            )}
-
+            {currentFilteredProjects.map((project) => (
+              <ProjectCard key={project.title} project={project} />
+            ))}
           </motion.div>
-
         </AnimatePresence>
 
-        {/* All Projects Pagination Dots */}
-        
+        {/* All Projects Pagination */}
         {totalAllSlides > 1 && (
           <div className="mt-12 flex justify-center gap-3">
-
-            {Array.from({ length: totalAllSlides }).map(
-              (_, index) => (
-                <button
-                  key={index}
-                  onClick={() =>
-                    setCurrentAllSlide(index)
-                  }
-                  className={`
-                    h-2.5
-                    rounded-full
-                    transition-all
-                    duration-300
-
-                    ${
-                      currentAllSlide === index
-                        ? "w-10 bg-blue-500"
-                        : "w-2.5 bg-slate-600 hover:bg-slate-500"
-                    }
-                  `}
-                />
-              )
-            )}
-
+            {Array.from({ length: totalAllSlides }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentAllSlide(index)}
+                className={`h-2.5 rounded-full transition-all duration-500 ${
+                  currentAllSlide === index ? "w-12 bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.8)]" : "w-3 bg-slate-700 hover:bg-slate-500"
+                }`}
+              />
+            ))}
           </div>
         )}
-
       </Container>
-
     </section>
   );
 };

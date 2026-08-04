@@ -8,6 +8,8 @@ import {
   FaGitAlt,
   FaFigma,
   FaPhp,
+  FaNodeJs,
+  FaPython,
 } from "react-icons/fa";
 
 import {
@@ -77,10 +79,20 @@ const skillsData = [
         icon: FaPhp,
         color: "text-indigo-400",
       },
+      {
+        name: "Node.js",
+        icon: FaNodeJs,
+        color: "text-green-500",
+      },
+      {
+        name: "Python",
+        icon: FaPython,
+        color: "text-blue-400",
+      },
     ],
   },
   {
-    title: "Database",
+    title: "Database Management",
     skills: [
       {
         name: "PostgreSQL",

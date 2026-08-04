@@ -5,6 +5,7 @@ import Hero from "@/sections/Hero/Hero";
 import About from "@/sections/About/About";
 import Experience from "@/sections/Experience/Experience";
 import Skills from "@/sections/Skills/Skills";
+// import Certificates from "@/sections/Certificates/Certificates";
 import Projects from "@/sections/Projects/Projects";
 import Contact from "@/sections/Contact/Contact";
 
@@ -15,25 +16,13 @@ const Home = () => {
       <Navbar />
 
       {/* Main Content */}
-      <main
-        id="home"
-        className="
-          relative
-          min-h-screen
-          overflow-x-hidden
-          bg-background
-        "
-      >
+      <main className="relative min-h-screen overflow-x-hidden">
         <Hero />
-
         <About />
-
         <Experience />
-
         <Skills />
-
+        {/* <Certificates /> */}
         <Projects />
-
         <Contact />
       </main>
 

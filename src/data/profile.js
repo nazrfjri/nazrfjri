@@ -2,10 +2,10 @@ export const profile = {
   name: "Eka Nazar Fajriansyah",
 
   title: [
-    "Full-Stack Web Developer",
+    "Full Stack Developer",
     // "Laravel Developer",
     // "React Developer",
-    "UI/UX Enthusiast",
+    "Business & Tech Enthusiast",
     "Information Systems Graduate",
   ],
 

@@ -2,7 +2,7 @@ const experienceData = [
   {
     id: 1,
     period: "Apr 2025 – Present",
-    role: "IT Web Developer Intern",
+    role: "IT (Full Stack Developer)",
     company: "PT Inti Ganda Perdana",
     description:
       "Developing and maintaining internal web applications to support manufacturing operations. Key responsibilities include managing user maintenance for the company's maintenance digitalization initiatives, optimizing SQL databases, integrating backend systems, and deploying stable releases.",
@@ -11,7 +11,7 @@ const experienceData = [
   {
     id: 2,
     period: "Sep 2024 – Mar 2025",
-    role: "Knowledge Management Intern",
+    role: "Knowledge Management",
     company: "PT Inti Ganda Perdana",
     description:
       "Managed core operational documentation (Work Instructions, Quality Check Standards) and validated field data. Produced technical learning videos, conducted vocational training, and engineered an Excel-based employee competency assessment system.",

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import profile from "@/assets/images/profile.png";
+import profile from "@/assets/images/profile2.png";
 
 import { FaReact, FaLaravel, FaJs } from "react-icons/fa";
 import { SiPostgresql, SiMysql } from "react-icons/si";
@@ -94,7 +94,7 @@ const HeroImage = () => {
           <img
             src={profile}
             alt="Eka Nazar Fajriansyah"
-            className="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
+            className="h-full w-full object-cover scale-[2.2] object-[90%_100%] -translate-x-8"
           />
         </motion.div>
       </div>

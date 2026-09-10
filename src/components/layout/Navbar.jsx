@@ -1,69 +1,111 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { name: "About", href: "#about" },
-  { name: "Experience", href: "#experience" },
-  { name: "Skills", href: "#skills" }, // Saya tambahkan Skills agar lengkap
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
+  { name: "About", id: "about" },
+  { name: "Experience", id: "experience" },
+  { name: "Skills", id: "skills" },
+  { name: "Projects", id: "projects" },
+  { name: "Contact", id: "contact" },
 ];
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault();
+    setIsOpen(false);
+    const element = document.getElementById(sectionId);
+    
+    if (element) {
+      const offsetTop = element.getBoundingClientRect().top + window.scrollY - 100;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth"
+      });
+    }
+  };
+
   return (
-    <motion.header
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed inset-x-0 top-6 z-50 flex justify-center px-4"
-    >
-      <div className="flex w-full max-w-4xl items-center justify-between rounded-full border border-slate-700/60 bg-slate-950/60 px-6 py-3.5 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+    <header className="fixed inset-x-0 top-4 z-50 mx-auto px-4 md:px-8">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between rounded-full border border-slate-800/60 bg-slate-950/80 px-6 py-3 backdrop-blur-md">
         
-        {/* Logo / Name */}
-        <a href="#home" className="group flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 font-bold text-white transition-transform duration-300 group-hover:rotate-12">
+        <a 
+          href="#" 
+          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} 
+          className="group flex items-center gap-2"
+        >
+          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 font-bold text-white transition-transform group-hover:scale-105">
             E
           </div>
-          <span className="text-lg font-bold tracking-tight text-slate-200 transition-colors group-hover:text-white">
-            nazrfjr<span className="text-blue-500">.</span>
-          </span>
+          <span className="text-xl font-bold tracking-tight text-white">nazrfjr.</span>
         </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.name}
-              href={link.href}
-              className="group relative px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:text-white"
+              href={`#${link.id}`}
+              onClick={(e) => scrollToSection(e, link.id)}
+              className="text-sm font-medium text-slate-400 transition-colors hover:text-white"
             >
-              <span className="relative z-10">{link.name}</span>
-              {/* Hover Pill Background */}
-              <div className="absolute inset-0 z-0 scale-50 opacity-0 rounded-full bg-slate-800/80 transition-all duration-300 ease-out group-hover:scale-100 group-hover:opacity-100" />
+              {link.name}
             </a>
           ))}
         </nav>
 
-        {/* Hire Me / Action Button (Optional desktop addition for conversion) */}
         <div className="hidden md:block">
           <a
             href="#contact"
-            className="rounded-full border border-blue-500/50 bg-blue-500/10 px-5 py-2 text-sm font-semibold text-blue-400 transition-all hover:bg-blue-500 hover:text-white hover:shadow-[0_0_15px_rgba(37,99,235,.4)]"
+            onClick={(e) => scrollToSection(e, "contact")}
+            className="rounded-full border border-slate-700 bg-slate-800/50 px-5 py-2 text-sm font-semibold text-white transition-all hover:border-blue-500 hover:bg-blue-600/20"
           >
             Hire Me
           </a>
         </div>
 
-        {/* Mobile Menu Icon (Visual Only) */}
-        <button className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700/60 bg-slate-800/50 text-slate-300 md:hidden">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinelinejoin="round">
-            <line x1="4" x2="20" y1="12" y2="12" />
-            <line x1="4" x2="20" y1="6" y2="6" />
-            <line x1="4" x2="20" y1="18" y2="18" />
-          </svg>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 bg-slate-900 text-slate-300 md:hidden"
+        >
+          {isOpen ? <X size={18} /> : <Menu size={18} />}
         </button>
-        
       </div>
-    </motion.header>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="mx-auto mt-3 max-w-6xl overflow-hidden rounded-2xl border border-slate-800/60 bg-slate-950/95 p-4 backdrop-blur-xl md:hidden shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
+          >
+            <div className="flex flex-col space-y-1">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={`#${link.id}`}
+                  onClick={(e) => scrollToSection(e, link.id)}
+                  className="rounded-lg px-4 py-3 text-base font-medium text-slate-300 transition-colors hover:bg-slate-800/50 hover:text-white"
+                >
+                  {link.name}
+                </a>
+              ))}
+              <div className="pt-3 pb-1">
+                <a
+                  href="#contact"
+                  onClick={(e) => scrollToSection(e, "contact")}
+                  className="flex w-full items-center justify-center rounded-full bg-blue-600 px-5 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
+                >
+                  Hire Me
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
   );
 };
 

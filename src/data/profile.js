@@ -6,7 +6,7 @@ export const profile = {
     // "Laravel Developer",
     // "React Developer",
     "Business & Tech Enthusiast",
-    "Information Systems Graduate",
+    // "Information Systems Graduate",
   ],
 
   description:

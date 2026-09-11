@@ -16,6 +16,7 @@ import {
   SiTailwindcss,
   SiRedux,
   SiVite,
+  SiRedis,
 } from "react-icons/si";
 
 import ecommerceImg from "@/assets/images/ecommerce.png";
@@ -27,12 +28,53 @@ import weatherImg from "@/assets/images/weatherapp.png";
 import rentalImg from "@/assets/images/rentalyuk.png";
 import magangImg from "@/assets/images/magangsi.png";
 import sirkusImg from "@/assets/images/sirkus.png";
+import weddingImg from "@/assets/images/wedding.png";
 
 
 const projectsData = [
   // =========================================
   // FEATURED
   // =========================================
+
+  {
+    featured: false,
+    category: "Web Development",
+    type: "demo",
+
+    title: "Digital Wedding Invitation",
+
+    description:
+      "Project freelance pembuatan website undangan pernikahan digital untuk kebutuhan acara klien.",
+
+    image: weddingImg,
+
+    technologies: [
+      {
+        name: "React",
+        icon: FaReact,
+        color: "text-cyan-400",
+      },
+      {
+        name: "Vite",
+        icon: SiVite,
+        color: "text-yellow-400",
+      },
+      {
+        name: "Tailwind CSS",
+        icon: SiTailwindcss,
+        color: "text-cyan-500",
+      },
+      {
+        name: "Redis",
+        icon: SiRedis,
+        color: "text-red-500",
+      },
+    ],
+
+    github: "",
+    demo: "https://undangandigital-putri-dan-zagar.vercel.app/?to=Tamu+Undangan",
+    prototype: "",
+  },
 
   {
     featured: false,

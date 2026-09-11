@@ -43,15 +43,6 @@ const Projects = () => {
 
   return (
     <section id="projects" className="relative overflow-hidden py-32">
-      {/* Ambient Animated Glow */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <motion.div
-          animate={{ scale: [1, 1.1, 1], opacity: [0.15, 0.3, 0.15] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute left-1/2 top-40 -z-10 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-blue-600/10 blur-[200px]"
-        />
-      </div>
-
       <Container className="relative z-10">
         {/* Featured Section */}
         <SectionTitle subtitle="Portfolio" title="Featured Projects" />
@@ -60,13 +51,13 @@ const Projects = () => {
           <div className="mb-8 flex items-center justify-end gap-3">
             <button
               onClick={prevSlide}
-              className="group flex h-12 w-12 items-center justify-center rounded-full border border-slate-700 bg-slate-900/50 text-slate-400 backdrop-blur-md transition-all hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-400 hover:shadow-[0_0_20px_rgba(37,99,235,.2)]"
+              className="group flex h-12 w-12 items-center justify-center rounded-full border border-white/40 bg-white/40 text-slate-600 backdrop-blur-md transition-all hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-600 hover:shadow-[0_0_20px_rgba(37,99,235,.2)]"
             >
               <ChevronLeft size={20} className="transition-transform group-hover:-translate-x-1" />
             </button>
             <button
               onClick={nextSlide}
-              className="group flex h-12 w-12 items-center justify-center rounded-full border border-slate-700 bg-slate-900/50 text-slate-400 backdrop-blur-md transition-all hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-400 hover:shadow-[0_0_20px_rgba(37,99,235,.2)]"
+              className="group flex h-12 w-12 items-center justify-center rounded-full border border-white/40 bg-white/40 text-slate-600 backdrop-blur-md transition-all hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-600 hover:shadow-[0_0_20px_rgba(37,99,235,.2)]"
             >
               <ChevronRight size={20} className="transition-transform group-hover:translate-x-1" />
             </button>
@@ -102,25 +93,27 @@ const Projects = () => {
 
         <div className="mb-12 flex flex-col justify-between gap-6 lg:flex-row lg:items-center">
           {/* Category Filter */}
-          <div className="flex flex-wrap gap-2 rounded-full border border-slate-700/60 bg-slate-900/40 p-2 backdrop-blur-xl">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => handleCategoryChange(category)}
-                className="relative rounded-full px-6 py-2.5 text-sm font-semibold tracking-wide transition-colors"
-              >
-                {activeCategory === category && (
-                  <motion.div
-                    layoutId="active-filter"
-                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                    className="absolute inset-0 rounded-full bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,.4)]"
-                  />
-                )}
-                <span className={`relative z-10 ${activeCategory === category ? "text-white" : "text-slate-400 hover:text-slate-200"}`}>
-                  {category}
-                </span>
-              </button>
-            ))}
+          <div className="flex w-full overflow-x-auto pb-2 lg:pb-0 lg:w-auto hide-scrollbar">
+            <div className="flex w-max gap-2 rounded-full border border-slate-300 bg-white/30 p-2 backdrop-blur-xl">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => handleCategoryChange(category)}
+                  className="relative rounded-full px-5 py-2 text-sm font-semibold tracking-wide transition-colors whitespace-nowrap"
+                >
+                  {activeCategory === category && (
+                    <motion.div
+                      layoutId="active-filter"
+                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                      className="absolute inset-0 rounded-full bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,.4)]"
+                    />
+                  )}
+                  <span className={`relative z-10 ${activeCategory === category ? "text-slate-900" : "text-slate-600 hover:text-slate-800"}`}>
+                    {category}
+                  </span>
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* All Projects Slider Controls */}
@@ -128,13 +121,13 @@ const Projects = () => {
             <div className="flex items-center gap-3">
               <button
                 onClick={prevAllSlide}
-                className="group flex h-11 w-11 items-center justify-center rounded-full border border-slate-700 bg-slate-900/50 text-slate-400 backdrop-blur-md transition-all hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-400"
+                className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-white/40 text-slate-600 backdrop-blur-md transition-all hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-600"
               >
                 <ChevronLeft size={18} className="transition-transform group-hover:-translate-x-1" />
               </button>
               <button
                 onClick={nextAllSlide}
-                className="group flex h-11 w-11 items-center justify-center rounded-full border border-slate-700 bg-slate-900/50 text-slate-400 backdrop-blur-md transition-all hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-400"
+                className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-white/40 text-slate-600 backdrop-blur-md transition-all hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-600"
               >
                 <ChevronRight size={18} className="transition-transform group-hover:translate-x-1" />
               </button>

@@ -10,12 +10,6 @@ const Experience = () => {
       id="experience"
       className="relative overflow-hidden py-32"
     >
-      {/* Background Ambient Glow */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -right-1/4 top-1/4 h-[500px] w-[500px] rounded-full bg-blue-600/10 blur-[150px]" />
-        <div className="absolute -left-1/4 bottom-1/4 h-[400px] w-[400px] rounded-full bg-cyan-600/10 blur-[150px]" />
-      </div>
-
       <Container className="relative z-10">
         <SectionTitle
           title="Experience"

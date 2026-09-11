@@ -27,17 +27,17 @@ const ContactInfo = () => {
       className="mx-auto max-w-3xl text-center"
     >
       {/* Heading */}
-      <motion.p variants={itemVariants} className="text-sm font-semibold uppercase tracking-[0.35em] text-blue-400">
+      <motion.p variants={itemVariants} className="text-sm font-semibold uppercase tracking-[0.35em] text-blue-600">
         {contactData.heading.subtitle}
       </motion.p>
 
       <motion.h2 variants={itemVariants} className="mt-5 text-4xl font-black leading-tight tracking-tight sm:text-5xl">
-        <span className="bg-gradient-to-br from-white to-slate-400 bg-clip-text text-transparent">
+        <span className="shimmer-text">
           {contactData.heading.title}
         </span>
       </motion.h2>
 
-      <motion.p variants={itemVariants} className="mx-auto mt-8 max-w-2xl leading-8 text-slate-400">
+      <motion.p variants={itemVariants} className="mx-auto mt-8 max-w-2xl leading-8 text-slate-600">
         {contactData.heading.description}
       </motion.p>
 
@@ -55,6 +55,7 @@ const ContactInfo = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="
+                holo-border
                 group
                 relative
                 flex
@@ -63,23 +64,24 @@ const ContactInfo = () => {
                 overflow-hidden
                 rounded-2xl
                 border
-                border-slate-800
-                bg-slate-900/40
+                border-white/60
+                bg-dreamy-glass
                 px-7
                 py-5
                 backdrop-blur-xl
                 transition-all
                 duration-300
                 hover:border-blue-500/50
-                hover:shadow-[0_0_30px_rgba(37,99,235,.15)]
+                hover:shadow-[0_0_35px_rgba(37,99,235,.2)]
               "
             >
               {/* Inner Hover Glow */}
-              <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/5 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/8 via-transparent to-violet-500/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
               <div className="relative z-10 flex items-center gap-5">
                 <div
                   className="
+                    neon-glow
                     flex
                     h-13
                     w-13
@@ -88,25 +90,26 @@ const ContactInfo = () => {
                     rounded-xl
                     bg-blue-500/10
                     p-3
-                    text-blue-400
+                    text-blue-600
                     ring-1
                     ring-inset
                     ring-blue-500/20
                     transition-all
                     duration-300
                     group-hover:bg-blue-500
-                    group-hover:text-white
+                    group-hover:text-slate-900
                     group-hover:ring-blue-500
+                    group-hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]
                   "
                 >
                   <Icon size={24} />
                 </div>
 
                 <div className="text-left">
-                  <p className="text-sm font-medium text-slate-500 transition-colors group-hover:text-slate-400">
+                  <p className="text-sm font-medium text-slate-500 transition-colors group-hover:text-slate-600">
                     {item.title}
                   </p>
-                  <p className="mt-1 font-semibold tracking-wide text-slate-200 transition-colors group-hover:text-white break-all">
+                  <p className="mt-1 font-semibold tracking-wide text-slate-800 transition-colors group-hover:text-slate-900 break-all">
                     {item.value}
                   </p>
                 </div>
@@ -130,17 +133,18 @@ const ContactInfo = () => {
             px-5
             py-3
             text-emerald-400
-            shadow-[0_0_20px_rgba(16,185,129,.1)]
+            shadow-[0_0_25px_rgba(16,185,129,.15)]
+            backdrop-blur-md
           "
         >
           {/* Live Pinging Dot */}
-          <span className="relative flex h-2.5 w-2.5">
+          <span className="relative flex h-2.5 w-2.5 shrink-0">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
           </span>
 
-          <AvailabilityIcon size={18} />
-          <span className="font-semibold tracking-wide">
+          <AvailabilityIcon size={18} className="shrink-0" />
+          <span className="font-semibold tracking-wide text-left">
             {contactData.availability.description}
           </span>
         </div>
@@ -170,16 +174,16 @@ const ContactInfo = () => {
                 overflow-hidden
                 rounded-2xl
                 border
-                border-slate-700/60
-                bg-slate-900/40
-                text-slate-300
+                border-white/40/60
+                bg-dreamy-glass
+                text-slate-700
                 backdrop-blur-xl
                 transition-all
                 duration-300
                 hover:border-blue-500
                 hover:bg-blue-500
-                hover:text-white
-                hover:shadow-[0_0_25px_rgba(37,99,235,.4)]
+                hover:text-slate-900
+                hover:shadow-[0_0_30px_rgba(37,99,235,.5)]
               "
             >
               <Icon size={22} className="relative z-10" />

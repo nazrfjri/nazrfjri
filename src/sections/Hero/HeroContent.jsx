@@ -32,8 +32,8 @@ const HeroContent = () => {
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-75"></span>
           <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-500"></span>
         </span>
-        <span className="text-xs font-semibold tracking-wider text-blue-300 sm:text-sm">
-          IT WEB DEVELOPER INTERN
+        <span className="text-xs font-semibold tracking-wider text-blue-700 sm:text-sm">
+          Information Systems Graduate
         </span>
       </motion.div>
 
@@ -42,7 +42,7 @@ const HeroContent = () => {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
-        className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-slate-400"
+        className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-slate-600"
       >
         Hello, I'm
       </motion.p>
@@ -54,7 +54,7 @@ const HeroContent = () => {
         transition={{ delay: 0.3 }}
         className="mb-6 text-5xl font-black leading-[1.1] tracking-tight sm:text-6xl lg:text-7xl"
       >
-        <span className="bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-slate-900 via-slate-700 to-slate-500 bg-clip-text text-transparent">
           {profile.name}
         </span>
       </motion.h1>
@@ -80,7 +80,7 @@ const HeroContent = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
-        className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg lg:mx-0 lg:max-w-xl"
+        className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg lg:mx-0 lg:max-w-xl"
       >
         {profile.description}
       </motion.p>
@@ -99,7 +99,7 @@ const HeroContent = () => {
         </a>
 
         <a href="#projects" aria-label="View Projects" className="w-full sm:w-auto">
-          <Button variant="secondary" className="w-full group relative overflow-hidden border-slate-700 hover:border-slate-500">
+          <Button variant="secondary" className="w-full group relative overflow-hidden border-white/40 hover:border-slate-500">
             View Projects
           </Button>
         </a>

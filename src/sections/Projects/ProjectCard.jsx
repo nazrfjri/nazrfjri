@@ -29,22 +29,34 @@ const ProjectCard = ({ project, featuredView = false }) => {
     <motion.article
       whileHover={{ y: -8 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
-      className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-slate-700/60 bg-slate-900/40 backdrop-blur-xl transition-all duration-300 hover:border-blue-500/50 hover:shadow-[0_0_40px_rgba(37,99,235,.15)]"
+      className="holo-border group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/40/60 bg-dreamy-glass backdrop-blur-xl transition-all duration-300 hover:border-blue-500/50 hover:shadow-[0_0_50px_rgba(37,99,235,.2)]"
     >
       {/* Card Inner Glow */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-cyan-500/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-violet-500/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
       {/* Header (Mac Browser Style) */}
-      <div className="relative z-10 border-b border-slate-700/50 bg-slate-900/80 px-5 py-3">
+      <div className="relative z-10 border-b border-white/40/50 bg-white/80 px-5 py-3">
         <div className="flex items-center justify-between">
           <div className="flex gap-2">
-            <span className="h-3 w-3 rounded-full bg-rose-500 shadow-[0_0_10px_rgba(244,63,94,0.4)]" />
-            <span className="h-3 w-3 rounded-full bg-amber-500 shadow-[0_0_10px_rgba(245,158,11,0.4)]" />
-            <span className="h-3 w-3 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.4)]" />
+            <motion.span 
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 2, repeat: Infinity, delay: 0 }}
+              className="h-3 w-3 rounded-full bg-rose-500 shadow-[0_0_10px_rgba(244,63,94,0.4)]" 
+            />
+            <motion.span 
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
+              className="h-3 w-3 rounded-full bg-amber-500 shadow-[0_0_10px_rgba(245,158,11,0.4)]" 
+            />
+            <motion.span 
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 2, repeat: Infinity, delay: 0.6 }}
+              className="h-3 w-3 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.4)]" 
+            />
           </div>
 
           {project.category && (
-            <span className="flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-300 backdrop-blur-md">
+            <span className="flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-700 backdrop-blur-md">
               {categoryIcon[project.category]}
               {project.category}
             </span>
@@ -54,12 +66,12 @@ const ProjectCard = ({ project, featuredView = false }) => {
 
       {/* Image Container with Featured Badge */}
       <div className="relative overflow-hidden bg-slate-950">
-        {/* Dark overlay on hover for better focus */}
-        <div className="absolute inset-0 z-10 bg-slate-900/0 transition-colors duration-500 group-hover:bg-slate-900/20" />
+        {/* Prismatic overlay on hover */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-br from-blue-500/0 via-violet-500/0 to-cyan-500/0 transition-all duration-700 group-hover:from-blue-500/10 group-hover:via-violet-500/5 group-hover:to-cyan-500/10" />
 
-        {/* Featured Badge (Moved inside image wrapper, Top Right) */}
+        {/* Featured Badge */}
         {project.featured && (
-          <div className="absolute right-4 top-4 z-20 flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-600/90 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-white shadow-[0_0_20px_rgba(37,99,235,.4)] backdrop-blur-md">
+          <div className="absolute right-4 top-4 z-20 flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-600/90 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-slate-900 shadow-[0_0_20px_rgba(37,99,235,.4)] backdrop-blur-md">
             <motion.div
               animate={{ rotate: [0, 15, -15, 0], scale: [1, 1.2, 1] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
@@ -73,7 +85,7 @@ const ProjectCard = ({ project, featuredView = false }) => {
         <img
           src={project.image}
           alt={project.title}
-          className={`w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${
+          className={`w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 ${
             featuredView ? "h-[420px]" : "h-72"
           }`}
         />
@@ -81,11 +93,11 @@ const ProjectCard = ({ project, featuredView = false }) => {
 
       {/* Content Section */}
       <div className="relative z-10 flex flex-1 flex-col p-8">
-        <h3 className={`font-bold tracking-tight text-white transition-colors duration-300 group-hover:text-blue-400 ${featuredView ? "text-4xl" : "text-3xl"}`}>
+        <h3 className={`font-bold tracking-tight text-slate-900 transition-colors duration-300 group-hover:text-blue-600 ${featuredView ? "text-4xl" : "text-3xl"}`}>
           {project.title}
         </h3>
 
-        <p className={`mt-5 text-slate-400 transition-colors duration-300 group-hover:text-slate-300 ${featuredView ? "max-w-3xl leading-9 text-lg" : "leading-8"}`}>
+        <p className={`mt-5 text-slate-600 transition-colors duration-300 group-hover:text-slate-700 ${featuredView ? "max-w-3xl leading-9 text-lg" : "leading-8"}`}>
           {project.description}
         </p>
 
@@ -95,12 +107,12 @@ const ProjectCard = ({ project, featuredView = false }) => {
             const Icon = tech.icon;
             return (
               <motion.div
-                whileHover={{ scale: 1.05, y: -2 }}
+                whileHover={{ scale: 1.08, y: -2 }}
                 key={tech.name}
-                className="flex items-center gap-2 rounded-full border border-slate-700/60 bg-slate-800/50 px-4 py-2 text-sm backdrop-blur-md transition-colors hover:border-blue-500/50 hover:bg-slate-800"
+                className="flex items-center gap-2 rounded-full border border-white/40/60 bg-dreamy-glass px-4 py-2 text-sm backdrop-blur-md transition-all hover:border-blue-500/50 hover:bg-slate-800 hover:shadow-[0_0_15px_rgba(37,99,235,0.2)]"
               >
                 <Icon className={`${tech.color} text-lg drop-shadow-md`} />
-                <span className="font-medium text-slate-200">{tech.name}</span>
+                <span className="font-medium text-slate-800">{tech.name}</span>
               </motion.div>
             );
           })}
@@ -115,7 +127,7 @@ const ProjectCard = ({ project, featuredView = false }) => {
               href={project.github}
               target="_blank"
               rel="noreferrer"
-              className="group/btn flex items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-800/60 py-3.5 font-semibold text-white transition-all hover:border-slate-500 hover:bg-slate-700 hover:shadow-[0_0_20px_rgba(255,255,255,.1)]"
+              className="group/btn flex items-center justify-center gap-2 rounded-xl border border-white/40 bg-slate-800/60 py-3.5 font-semibold text-slate-900 transition-all hover:border-slate-500 hover:bg-slate-700 hover:shadow-[0_0_20px_rgba(255,255,255,.1)]"
             >
               <FaGithub size={18} className="transition-transform group-hover/btn:scale-110" />
               Source Code
@@ -129,7 +141,7 @@ const ProjectCard = ({ project, featuredView = false }) => {
               href={project.demo}
               target="_blank"
               rel="noreferrer"
-              className="group/btn flex items-center justify-center gap-2 rounded-xl bg-blue-600 py-3.5 font-semibold text-white shadow-lg shadow-blue-900/20 transition-all hover:bg-blue-500 hover:shadow-[0_0_20px_rgba(59,130,246,.4)]"
+              className="group/btn flex items-center justify-center gap-2 rounded-xl bg-blue-600 py-3.5 font-semibold text-slate-900 shadow-lg shadow-blue-900/20 transition-all hover:bg-blue-500 hover:shadow-[0_0_25px_rgba(59,130,246,.5)]"
             >
               <ExternalLink size={18} className="transition-transform group-hover/btn:scale-110" />
               Live Demo
@@ -143,7 +155,7 @@ const ProjectCard = ({ project, featuredView = false }) => {
               href={project.prototype}
               target="_blank"
               rel="noreferrer"
-              className="group/btn flex items-center justify-center gap-2 rounded-xl bg-pink-600 py-3.5 font-semibold text-white shadow-lg shadow-pink-900/20 transition-all hover:bg-pink-500 hover:shadow-[0_0_20px_rgba(219,39,119,.4)]"
+              className="group/btn flex items-center justify-center gap-2 rounded-xl bg-pink-600 py-3.5 font-semibold text-slate-900 shadow-lg shadow-pink-900/20 transition-all hover:bg-pink-500 hover:shadow-[0_0_25px_rgba(219,39,119,.5)]"
             >
               <FaFigma size={18} className="transition-transform group-hover/btn:scale-110" />
               View Prototype
@@ -151,7 +163,7 @@ const ProjectCard = ({ project, featuredView = false }) => {
           )}
 
           {!hasGithub && !hasDemo && !hasPrototype && (
-            <div className="rounded-xl border border-dashed border-slate-700/60 bg-slate-900/30 py-3.5 text-center font-medium tracking-wide text-slate-500 backdrop-blur-sm">
+            <div className="rounded-xl border border-dashed border-white/40/60 bg-dreamy-glass py-3.5 text-center font-medium tracking-wide text-slate-500 backdrop-blur-sm">
               Coming Soon
             </div>
           )}

@@ -87,7 +87,7 @@ const skillsData = [
       {
         name: "Python",
         icon: FaPython,
-        color: "text-blue-400",
+        color: "text-blue-600",
       },
     ],
   },
@@ -97,7 +97,7 @@ const skillsData = [
       {
         name: "PostgreSQL",
         icon: SiPostgresql,
-        color: "text-blue-400",
+        color: "text-blue-600",
       },
       {
         name: "MySQL",

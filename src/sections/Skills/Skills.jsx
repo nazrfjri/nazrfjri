@@ -11,7 +11,7 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.08, // Jeda antar kartu
+      staggerChildren: 0.08,
     },
   },
 };
@@ -27,12 +27,6 @@ const Skills = () => {
       id="skills"
       className="relative overflow-hidden py-32"
     >
-      {/* Ambient Background Glow */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute left-1/4 top-1/4 h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-blue-600/10 blur-[150px]" />
-        <div className="absolute bottom-1/4 right-1/4 h-[300px] w-[300px] translate-x-1/4 rounded-full bg-cyan-500/10 blur-[120px]" />
-      </div>
-
       <Container className="relative z-10">
         <SectionTitle
           subtitle="Technologies"
@@ -50,9 +44,15 @@ const Skills = () => {
             >
               <motion.h3
                 variants={headerVariants}
-                className="mb-8 flex items-center gap-3 text-2xl font-bold text-white"
+                className="mb-8 flex items-center gap-3 text-2xl font-bold text-slate-900"
               >
-                <span className="h-1.5 w-8 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.8)]" />
+                <span
+                  className="h-1.5 w-8 rounded-full"
+                  style={{
+                    background: "linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4)",
+                    boxShadow: "0 0 15px rgba(59,130,246,0.6)",
+                  }}
+                />
                 {group.title}
               </motion.h3>
 

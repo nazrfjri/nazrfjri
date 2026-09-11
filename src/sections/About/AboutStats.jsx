@@ -60,7 +60,7 @@ const StatValue = ({ value, suffix }) => {
   return (
     <h3
       ref={ref}
-      className="relative z-10 text-4xl font-black tracking-tight text-slate-900 transition-colors duration-300 group-hover:text-slate-500"
+      className="relative z-10 text-4xl font-black tracking-tight text-slate-900 dark:text-white transition-colors duration-300 group-hover:text-slate-500 dark:text-slate-400"
     >
       <motion.span
         initial={{ opacity: 0, scale: 0.5 }}
@@ -93,18 +93,18 @@ const AboutStats = () => {
           key={index}
           variants={cardVariants}
           whileHover={{ y: -8, scale: 1.02 }}
-          className="holo-border tilt-shine group relative flex min-h-[220px] flex-col justify-center overflow-hidden rounded-3xl border border-white/40/60 bg-dreamy-glass p-8 backdrop-blur-xl transition-all duration-300 hover:border-blue-500/50 hover:shadow-[0_0_40px_rgba(37,99,235,.2)]"
+          className="holo-border tilt-shine group relative flex min-h-[220px] flex-col justify-center overflow-hidden rounded-3xl border border-white/40 dark:border-slate-700/60/60 bg-dreamy-glass p-8 backdrop-blur-xl transition-all duration-300 hover:border-blue-500/50 hover:shadow-[0_0_40px_rgba(37,99,235,.2)]"
         >
           {/* Subtle Background Accent */}
           <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-blue-500/5 blur-2xl transition-all duration-500 group-hover:bg-blue-500/20 group-hover:scale-150" />
           
-          <div className="neon-glow relative z-10 mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/80 text-blue-600 ring-1 ring-inset ring-slate-300 transition-all duration-300 group-hover:-translate-y-1 group-hover:bg-blue-500/10 group-hover:text-blue-700 group-hover:ring-blue-500/30">
+          <div className="neon-glow relative z-10 mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white dark:bg-slate-900/80 dark:bg-slate-800/80 text-blue-600 ring-1 ring-inset ring-slate-300 dark:ring-slate-700 transition-all duration-300 group-hover:-translate-y-1 group-hover:bg-blue-500/10 group-hover:text-blue-700 group-hover:ring-blue-500/30">
             {item.icon}
           </div>
 
           <StatValue value={item.value} suffix={item.suffix} />
 
-          <p className="relative z-10 mt-3 text-lg font-medium leading-7 text-slate-600 transition-colors duration-300 group-hover:text-slate-700">
+          <p className="relative z-10 mt-3 text-lg font-medium leading-7 text-slate-600 dark:text-slate-400 transition-colors duration-300 group-hover:text-slate-700 dark:group-hover:text-slate-300 dark:hover:text-slate-300 dark:text-slate-300">
             {item.label}
           </p>
         </motion.div>

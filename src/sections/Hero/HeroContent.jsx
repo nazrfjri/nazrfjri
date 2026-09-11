@@ -42,7 +42,7 @@ const HeroContent = () => {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
-        className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-slate-600"
+        className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-slate-600 dark:text-slate-400"
       >
         Hello, I'm
       </motion.p>
@@ -80,7 +80,7 @@ const HeroContent = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
-        className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg lg:mx-0 lg:max-w-xl"
+        className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-400 sm:text-lg lg:mx-0 lg:max-w-xl"
       >
         {profile.description}
       </motion.p>
@@ -99,7 +99,7 @@ const HeroContent = () => {
         </a>
 
         <a href="#projects" aria-label="View Projects" className="w-full sm:w-auto">
-          <Button variant="secondary" className="w-full group relative overflow-hidden border-white/40 hover:border-slate-500">
+          <Button variant="secondary" className="w-full group relative overflow-hidden border-white/40 dark:border-slate-700/60 hover:border-slate-500">
             View Projects
           </Button>
         </a>

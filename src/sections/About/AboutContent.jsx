@@ -65,11 +65,11 @@ const AboutContent = () => {
         </span>
       </motion.h3>
 
-      <p className="mt-8 max-w-xl leading-8 text-slate-600">
+      <p className="mt-8 max-w-xl leading-8 text-slate-600 dark:text-slate-400">
         I am a software engineer focused on building scalable internal tools and impactful digital solutions. My technical foundation spans across the Laravel and React ecosystems, powered by robust PostgreSQL and MySQL database architectures.
       </p>
 
-      <p className="mt-6 max-w-xl leading-8 text-slate-600">
+      <p className="mt-6 max-w-xl leading-8 text-slate-600 dark:text-slate-400">
         Beyond writing clean code, my dual experience in IT and Knowledge Management within the manufacturing sector has taught me how to align software with real business needs—from system integration and database optimization to standardizing operational workflows and technical documentation.
       </p>
 
@@ -86,7 +86,7 @@ const AboutContent = () => {
             key={index}
             variants={itemVariants}
             whileHover={{ y: -5 }}
-            className="holo-border tilt-shine group relative flex min-h-[110px] items-start gap-4 rounded-3xl border border-white/60 bg-dreamy-glass p-5 backdrop-blur-xl transition-all duration-300 hover:border-blue-500/50 hover:bg-white/60 hover:shadow-[0_0_30px_rgba(37,99,235,.15)]"
+            className="holo-border tilt-shine group relative flex min-h-[110px] items-start gap-4 rounded-3xl border border-white/60 dark:border-slate-700 bg-dreamy-glass p-5 backdrop-blur-xl transition-all duration-300 hover:border-blue-500/50 hover:bg-white dark:bg-slate-900/60 dark:bg-slate-800/60 hover:shadow-[0_0_30px_rgba(37,99,235,.15)]"
           >
             {/* Hover Inner Glow */}
             <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-500/10 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -96,10 +96,10 @@ const AboutContent = () => {
             </div>
 
             <div className="relative z-10 min-w-0 flex-1 pt-1">
-              <p className="text-sm font-medium text-slate-500">
+              <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
                 {item.title}
               </p>
-              <p className="mt-1 font-semibold leading-relaxed text-slate-800 transition-colors group-hover:text-slate-900">
+              <p className="mt-1 font-semibold leading-relaxed text-slate-800 dark:text-slate-200 transition-colors group-hover:text-slate-900 dark:group-hover:text-white dark:hover:text-white dark:text-white">
                 {item.value}
               </p>
             </div>

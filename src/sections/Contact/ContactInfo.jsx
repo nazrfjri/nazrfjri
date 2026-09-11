@@ -37,7 +37,7 @@ const ContactInfo = () => {
         </span>
       </motion.h2>
 
-      <motion.p variants={itemVariants} className="mx-auto mt-8 max-w-2xl leading-8 text-slate-600">
+      <motion.p variants={itemVariants} className="mx-auto mt-8 max-w-2xl leading-8 text-slate-600 dark:text-slate-400">
         {contactData.heading.description}
       </motion.p>
 
@@ -64,7 +64,7 @@ const ContactInfo = () => {
                 overflow-hidden
                 rounded-2xl
                 border
-                border-white/60
+                border-white/60 dark:border-slate-700
                 bg-dreamy-glass
                 px-7
                 py-5
@@ -97,7 +97,7 @@ const ContactInfo = () => {
                     transition-all
                     duration-300
                     group-hover:bg-blue-500
-                    group-hover:text-slate-900
+                    group-hover:text-slate-900 dark:group-hover:text-white dark:hover:text-white dark:text-white
                     group-hover:ring-blue-500
                     group-hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]
                   "
@@ -106,10 +106,10 @@ const ContactInfo = () => {
                 </div>
 
                 <div className="text-left">
-                  <p className="text-sm font-medium text-slate-500 transition-colors group-hover:text-slate-600">
+                  <p className="text-sm font-medium text-slate-500 dark:text-slate-400 transition-colors group-hover:text-slate-600 dark:text-slate-400">
                     {item.title}
                   </p>
-                  <p className="mt-1 font-semibold tracking-wide text-slate-800 transition-colors group-hover:text-slate-900 break-all">
+                  <p className="mt-1 font-semibold tracking-wide text-slate-800 dark:text-slate-200 transition-colors group-hover:text-slate-900 dark:group-hover:text-white dark:hover:text-white dark:text-white break-all">
                     {item.value}
                   </p>
                 </div>
@@ -174,15 +174,15 @@ const ContactInfo = () => {
                 overflow-hidden
                 rounded-2xl
                 border
-                border-white/40/60
+                border-white/40 dark:border-slate-700/60/60
                 bg-dreamy-glass
-                text-slate-700
+                text-slate-700 dark:text-slate-300
                 backdrop-blur-xl
                 transition-all
                 duration-300
                 hover:border-blue-500
                 hover:bg-blue-500
-                hover:text-slate-900
+                hover:text-slate-900 dark:hover:text-white dark:text-white
                 hover:shadow-[0_0_30px_rgba(37,99,235,.5)]
               "
             >

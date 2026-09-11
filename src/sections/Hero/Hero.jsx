@@ -36,10 +36,10 @@ const Hero = () => {
         transition={{ delay: 1.2, duration: 0.8 }}
         className="absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 transition-all hover:text-blue-600"
       >
-        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">
+        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400">
           Scroll
         </span>
-        <div className="flex h-11 w-6 justify-center rounded-full border-2 border-white/40/80 bg-white/40 pt-2 backdrop-blur-sm">
+        <div className="flex h-11 w-6 justify-center rounded-full border-2 border-white/40 dark:border-slate-700/60/80 bg-white dark:bg-slate-900/40 dark:bg-slate-800/40 pt-2 backdrop-blur-sm">
           <motion.div
             animate={{ y: [0, 12, 0], opacity: [1, 0, 1] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}

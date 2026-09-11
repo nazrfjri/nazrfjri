@@ -51,13 +51,13 @@ const Projects = () => {
           <div className="mb-8 flex items-center justify-end gap-3">
             <button
               onClick={prevSlide}
-              className="group flex h-12 w-12 items-center justify-center rounded-full border border-white/40 bg-white/40 text-slate-600 backdrop-blur-md transition-all hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-600 hover:shadow-[0_0_20px_rgba(37,99,235,.2)]"
+              className="group flex h-12 w-12 items-center justify-center rounded-full border border-white/40 dark:border-slate-700/60 bg-white dark:bg-slate-900/40 dark:bg-slate-800/40 text-slate-600 dark:text-slate-400 backdrop-blur-md transition-all hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-600 hover:shadow-[0_0_20px_rgba(37,99,235,.2)]"
             >
               <ChevronLeft size={20} className="transition-transform group-hover:-translate-x-1" />
             </button>
             <button
               onClick={nextSlide}
-              className="group flex h-12 w-12 items-center justify-center rounded-full border border-white/40 bg-white/40 text-slate-600 backdrop-blur-md transition-all hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-600 hover:shadow-[0_0_20px_rgba(37,99,235,.2)]"
+              className="group flex h-12 w-12 items-center justify-center rounded-full border border-white/40 dark:border-slate-700/60 bg-white dark:bg-slate-900/40 dark:bg-slate-800/40 text-slate-600 dark:text-slate-400 backdrop-blur-md transition-all hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-600 hover:shadow-[0_0_20px_rgba(37,99,235,.2)]"
             >
               <ChevronRight size={20} className="transition-transform group-hover:translate-x-1" />
             </button>
@@ -94,7 +94,7 @@ const Projects = () => {
         <div className="mb-12 flex flex-col justify-between gap-6 lg:flex-row lg:items-center">
           {/* Category Filter */}
           <div className="flex w-full overflow-x-auto pb-2 lg:pb-0 lg:w-auto hide-scrollbar">
-            <div className="flex w-max gap-2 rounded-full border border-slate-300 bg-white/30 p-2 backdrop-blur-xl">
+            <div className="flex w-max gap-2 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900/30 p-2 backdrop-blur-xl">
               {categories.map((category) => (
                 <button
                   key={category}
@@ -108,7 +108,7 @@ const Projects = () => {
                       className="absolute inset-0 rounded-full bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,.4)]"
                     />
                   )}
-                  <span className={`relative z-10 ${activeCategory === category ? "text-slate-900" : "text-slate-600 hover:text-slate-800"}`}>
+                  <span className={`relative z-10 ${activeCategory === category ? "text-slate-900 dark:text-white" : "text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 dark:text-slate-200"}`}>
                     {category}
                   </span>
                 </button>
@@ -121,13 +121,13 @@ const Projects = () => {
             <div className="flex items-center gap-3">
               <button
                 onClick={prevAllSlide}
-                className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-white/40 text-slate-600 backdrop-blur-md transition-all hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-600"
+                className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/40 dark:border-slate-700/60 bg-white dark:bg-slate-900/40 dark:bg-slate-800/40 text-slate-600 dark:text-slate-400 backdrop-blur-md transition-all hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-600"
               >
                 <ChevronLeft size={18} className="transition-transform group-hover:-translate-x-1" />
               </button>
               <button
                 onClick={nextAllSlide}
-                className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-white/40 text-slate-600 backdrop-blur-md transition-all hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-600"
+                className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/40 dark:border-slate-700/60 bg-white dark:bg-slate-900/40 dark:bg-slate-800/40 text-slate-600 dark:text-slate-400 backdrop-blur-md transition-all hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-600"
               >
                 <ChevronRight size={18} className="transition-transform group-hover:translate-x-1" />
               </button>

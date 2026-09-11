@@ -39,7 +39,7 @@ const HeroImage = () => {
         <motion.div
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.3 }}
-          className="holo-border tilt-shine relative z-10 h-56 w-56 overflow-hidden rounded-full border-4 border-white/60 bg-dreamy-glass shadow-[0_0_50px_rgba(37,99,235,.2)] xl:h-64 xl:w-64 backdrop-blur-md"
+          className="holo-border tilt-shine relative z-10 h-56 w-56 overflow-hidden rounded-full border-4 border-white/60 dark:border-slate-700 bg-dreamy-glass shadow-[0_0_50px_rgba(37,99,235,.2)] xl:h-64 xl:w-64 backdrop-blur-md"
         >
           <img
             src={profile}
@@ -57,9 +57,9 @@ const HeroImage = () => {
         <motion.div
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 4, repeat: Infinity, delay: 0, ease: "easeInOut" }}
-          className="flex lg:absolute lg:-left-6 lg:top-24 items-center gap-2.5 rounded-2xl border border-white/40 bg-dreamy-glass px-5 py-3 text-sm font-semibold text-slate-800 backdrop-blur-xl shadow-[0_0_15px_rgba(0,0,0,0.05)] pointer-events-auto transition-all hover:scale-110 hover:border-blue-400/50 hover:bg-dreamy-glass hover:text-blue-700"
+          className="flex lg:absolute lg:-left-6 lg:top-24 items-center gap-2.5 rounded-2xl border border-white/40 dark:border-slate-700/60 bg-dreamy-glass px-5 py-3 text-sm font-semibold text-slate-800 dark:text-slate-200 backdrop-blur-xl shadow-[0_0_15px_rgba(0,0,0,0.05)] pointer-events-auto transition-all hover:scale-110 hover:border-blue-400/50 hover:bg-dreamy-glass hover:text-blue-700"
         >
-          <div className="flex items-center justify-center rounded-lg bg-white/80 p-1.5 ring-1 ring-slate-300">
+          <div className="flex items-center justify-center rounded-lg bg-white dark:bg-slate-900/80 dark:bg-slate-800/80 p-1.5 ring-1 ring-slate-300 dark:ring-slate-700">
             <FaReact size={18} className="text-sky-400" />
           </div>
           <span>ReactJS</span>
@@ -69,9 +69,9 @@ const HeroImage = () => {
         <motion.div
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 4, repeat: Infinity, delay: 0.8, ease: "easeInOut" }}
-          className="flex lg:absolute lg:left-1/2 lg:-top-4 lg:-translate-x-1/2 items-center gap-2.5 rounded-2xl border border-white/40 bg-dreamy-glass px-5 py-3 text-sm font-semibold text-slate-800 backdrop-blur-xl shadow-[0_0_15px_rgba(0,0,0,0.05)] pointer-events-auto transition-all hover:scale-110 hover:border-blue-400/50 hover:bg-dreamy-glass hover:text-blue-700"
+          className="flex lg:absolute lg:left-1/2 lg:-top-4 lg:-translate-x-1/2 items-center gap-2.5 rounded-2xl border border-white/40 dark:border-slate-700/60 bg-dreamy-glass px-5 py-3 text-sm font-semibold text-slate-800 dark:text-slate-200 backdrop-blur-xl shadow-[0_0_15px_rgba(0,0,0,0.05)] pointer-events-auto transition-all hover:scale-110 hover:border-blue-400/50 hover:bg-dreamy-glass hover:text-blue-700"
         >
-          <div className="flex items-center justify-center rounded-lg bg-white/80 p-1.5 ring-1 ring-slate-300">
+          <div className="flex items-center justify-center rounded-lg bg-white dark:bg-slate-900/80 dark:bg-slate-800/80 p-1.5 ring-1 ring-slate-300 dark:ring-slate-700">
             <FaJs size={18} className="text-yellow-400" />
           </div>
           <span>JavaScript</span>
@@ -81,9 +81,9 @@ const HeroImage = () => {
         <motion.div
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 4, repeat: Infinity, delay: 1.6, ease: "easeInOut" }}
-          className="flex lg:absolute lg:-left-2 lg:bottom-24 items-center gap-2.5 rounded-2xl border border-white/40 bg-dreamy-glass px-5 py-3 text-sm font-semibold text-slate-800 backdrop-blur-xl shadow-[0_0_15px_rgba(0,0,0,0.05)] pointer-events-auto transition-all hover:scale-110 hover:border-blue-400/50 hover:bg-dreamy-glass hover:text-blue-700"
+          className="flex lg:absolute lg:-left-2 lg:bottom-24 items-center gap-2.5 rounded-2xl border border-white/40 dark:border-slate-700/60 bg-dreamy-glass px-5 py-3 text-sm font-semibold text-slate-800 dark:text-slate-200 backdrop-blur-xl shadow-[0_0_15px_rgba(0,0,0,0.05)] pointer-events-auto transition-all hover:scale-110 hover:border-blue-400/50 hover:bg-dreamy-glass hover:text-blue-700"
         >
-          <div className="flex items-center justify-center rounded-lg bg-white/80 p-1.5 ring-1 ring-slate-300">
+          <div className="flex items-center justify-center rounded-lg bg-white dark:bg-slate-900/80 dark:bg-slate-800/80 p-1.5 ring-1 ring-slate-300 dark:ring-slate-700">
             <FaLaravel size={18} className="text-red-500" />
           </div>
           <span>Laravel</span>
@@ -93,9 +93,9 @@ const HeroImage = () => {
         <motion.div
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 4, repeat: Infinity, delay: 2.4, ease: "easeInOut" }}
-          className="flex lg:absolute lg:-right-6 lg:top-32 items-center gap-2.5 rounded-2xl border border-white/40 bg-dreamy-glass px-5 py-3 text-sm font-semibold text-slate-800 backdrop-blur-xl shadow-[0_0_15px_rgba(0,0,0,0.05)] pointer-events-auto transition-all hover:scale-110 hover:border-blue-400/50 hover:bg-dreamy-glass hover:text-blue-700"
+          className="flex lg:absolute lg:-right-6 lg:top-32 items-center gap-2.5 rounded-2xl border border-white/40 dark:border-slate-700/60 bg-dreamy-glass px-5 py-3 text-sm font-semibold text-slate-800 dark:text-slate-200 backdrop-blur-xl shadow-[0_0_15px_rgba(0,0,0,0.05)] pointer-events-auto transition-all hover:scale-110 hover:border-blue-400/50 hover:bg-dreamy-glass hover:text-blue-700"
         >
-          <div className="flex items-center justify-center rounded-lg bg-white/80 p-1.5 ring-1 ring-slate-300">
+          <div className="flex items-center justify-center rounded-lg bg-white dark:bg-slate-900/80 dark:bg-slate-800/80 p-1.5 ring-1 ring-slate-300 dark:ring-slate-700">
             <SiPostgresql size={18} className="text-blue-600" />
           </div>
           <span>PostgreSQL</span>
@@ -105,9 +105,9 @@ const HeroImage = () => {
         <motion.div
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 4, repeat: Infinity, delay: 3.2, ease: "easeInOut" }}
-          className="flex lg:absolute lg:right-2 lg:bottom-28 items-center gap-2.5 rounded-2xl border border-white/40 bg-dreamy-glass px-5 py-3 text-sm font-semibold text-slate-800 backdrop-blur-xl shadow-[0_0_15px_rgba(0,0,0,0.05)] pointer-events-auto transition-all hover:scale-110 hover:border-blue-400/50 hover:bg-dreamy-glass hover:text-blue-700"
+          className="flex lg:absolute lg:right-2 lg:bottom-28 items-center gap-2.5 rounded-2xl border border-white/40 dark:border-slate-700/60 bg-dreamy-glass px-5 py-3 text-sm font-semibold text-slate-800 dark:text-slate-200 backdrop-blur-xl shadow-[0_0_15px_rgba(0,0,0,0.05)] pointer-events-auto transition-all hover:scale-110 hover:border-blue-400/50 hover:bg-dreamy-glass hover:text-blue-700"
         >
-          <div className="flex items-center justify-center rounded-lg bg-white/80 p-1.5 ring-1 ring-slate-300">
+          <div className="flex items-center justify-center rounded-lg bg-white dark:bg-slate-900/80 dark:bg-slate-800/80 p-1.5 ring-1 ring-slate-300 dark:ring-slate-700">
             <SiMysql size={18} className="text-sky-500" />
           </div>
           <span>MySQL</span>

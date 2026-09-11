@@ -12,7 +12,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative border-t border-white/60/60 bg-white/70 backdrop-blur-md">
+    <footer className="relative border-t border-white/60 dark:border-slate-700/60 bg-white dark:bg-slate-900/70 backdrop-blur-md">
       {/* Animated aurora border top */}
       <div className="gradient-line absolute left-0 top-0 w-full" />
 
@@ -20,10 +20,10 @@ const Footer = () => {
         
         {/* Copyright Text */}
         <div className="text-center md:text-left">
-          <p className="font-medium text-slate-600">
+          <p className="font-medium text-slate-600 dark:text-slate-400">
             © {year} Eka Nazar Fajriansyah. All rights reserved.
           </p>
-          <p className="mt-1.5 text-sm text-slate-500">
+          <p className="mt-1.5 text-sm text-slate-500 dark:text-slate-400">
             Built with React, Vite & Tailwind CSS.
           </p>
         </div>
@@ -33,7 +33,7 @@ const Footer = () => {
           whileHover={{ y: -4 }}
           whileTap={{ scale: 0.95 }}
           onClick={scrollToTop}
-          className="group flex items-center gap-2 rounded-full border border-white/40 bg-white/40 px-6 py-3 text-sm font-semibold text-slate-700 backdrop-blur-md transition-all hover:border-blue-500 hover:text-blue-600 hover:shadow-[0_0_25px_rgba(37,99,235,.3)]"
+          className="group flex items-center gap-2 rounded-full border border-white/40 dark:border-slate-700/60 bg-white dark:bg-slate-900/40 dark:bg-slate-800/40 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-300 backdrop-blur-md transition-all hover:border-blue-500 hover:text-blue-600 hover:shadow-[0_0_25px_rgba(37,99,235,.3)]"
         >
           Back to Top
           <ArrowUp size={16} className="transition-transform duration-300 group-hover:-translate-y-1" />

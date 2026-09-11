@@ -1,5 +1,29 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --aurora-1-start: rgba(6,182,212,0.4);
+  --aurora-1-end: rgba(56,189,248,0.2);
+  --aurora-2-start: rgba(30,64,175,0.3);
+  --aurora-2-end: rgba(59,130,246,0.15);
+  --aurora-3-start: rgba(168,85,247,0.3);
+  --aurora-3-end: rgba(139,92,246,0.15);
+  --aurora-4-start: rgba(14,165,233,0.3);
+  --aurora-4-end: rgba(224,242,254,0.4);
+}
+
+.dark {
+  --aurora-1-start: rgba(37,99,235,0.3);
+  --aurora-1-end: rgba(6,182,212,0.12);
+  --aurora-2-start: rgba(139,92,246,0.25);
+  --aurora-2-end: rgba(99,102,241,0.1);
+  --aurora-3-start: rgba(6,182,212,0.2);
+  --aurora-3-end: rgba(56,189,248,0.08);
+  --aurora-4-start: rgba(236,72,153,0.15);
+  --aurora-4-end: rgba(139,92,246,0.08);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -8,6 +32,12 @@ body {
   font-family: "Inter", sans-serif;
   background: #f8fafc;
   color: #0f172a;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.dark body {
+  background: #020617;
+  color: white;
 }
 
 * {
@@ -17,6 +47,11 @@ body {
 ::selection {
   background: rgba(37, 99, 235, 0.2);
   color: #1d4ed8;
+}
+
+.dark ::selection {
+  background: rgba(37, 99, 235, 0.4);
+  color: white;
 }
 
 /* =========================================
@@ -216,6 +251,21 @@ body {
   animation: shimmer-sweep 4s linear infinite;
 }
 
+.dark .shimmer-text {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.7) 0%,
+    rgba(148,163,184,0.5) 25%,
+    rgba(255,255,255,1) 50%,
+    rgba(148,163,184,0.5) 75%,
+    rgba(255,255,255,0.7) 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* =========================================
    FLOATING PARTICLES
    ========================================= */
@@ -349,6 +399,26 @@ body {
   box-shadow:
     0 0 30px rgba(37, 99, 235, 0.15),
     inset 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.dark .bg-dreamy-glass {
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.6) 0%,
+    rgba(30, 58, 138, 0.3) 25%,
+    rgba(15, 23, 42, 0.4) 50%,
+    rgba(49, 46, 129, 0.3) 75%,
+    rgba(15, 23, 42, 0.6) 100%
+  );
+  border: 1px solid rgba(51, 65, 85, 0.6);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.dark .bg-dreamy-glass:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow:
+    0 0 30px rgba(37, 99, 235, 0.2),
+    inset 0 0 20px rgba(30, 58, 138, 0.5);
 }
 
 /* =========================================

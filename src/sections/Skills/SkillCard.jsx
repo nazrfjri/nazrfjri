@@ -49,7 +49,7 @@ const SkillCard = ({ skill }) => {
         overflow-hidden
         rounded-2xl
         border
-        border-white/40/60
+        border-white/40 dark:border-slate-700/60/60
         bg-dreamy-glass
         p-5
         backdrop-blur-xl
@@ -74,11 +74,11 @@ const SkillCard = ({ skill }) => {
           items-center
           justify-center
           rounded-xl
-          bg-white/80
+          bg-white dark:bg-slate-900/80 dark:bg-slate-800/80
           p-3
           ring-1
           ring-inset
-          ring-slate-300
+          ring-slate-300 dark:ring-slate-700
           transition-all
           duration-300
           group-hover:bg-blue-500/10
@@ -100,11 +100,11 @@ const SkillCard = ({ skill }) => {
 
       {/* Text Content */}
       <div className="relative z-10">
-        <p className="font-semibold tracking-wide text-slate-800 transition-colors group-hover:text-slate-900">
+        <p className="font-semibold tracking-wide text-slate-800 dark:text-slate-200 transition-colors group-hover:text-slate-900 dark:group-hover:text-white dark:hover:text-white dark:text-white">
           {skill.name}
         </p>
 
-        <p className="text-sm font-medium text-slate-500 transition-colors group-hover:text-slate-600">
+        <p className="text-sm font-medium text-slate-500 dark:text-slate-400 transition-colors group-hover:text-slate-600 dark:text-slate-400">
           {skill.category ?? "Technology"}
         </p>
       </div>

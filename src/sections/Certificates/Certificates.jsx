@@ -44,13 +44,13 @@ const Certificates = () => {
           <div className="flex items-center gap-3 md:pb-16">
             <button
               onClick={prevSlide}
-              className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-white/40 text-slate-600 backdrop-blur-md transition-all hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-600"
+              className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/40 dark:border-slate-700/60 bg-white dark:bg-slate-900/40 dark:bg-slate-800/40 text-slate-600 dark:text-slate-400 backdrop-blur-md transition-all hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-600"
             >
               <ChevronLeft size={18} className="transition-transform group-hover:-translate-x-1" />
             </button>
             <button
               onClick={nextSlide}
-              className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-white/40 text-slate-600 backdrop-blur-md transition-all hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-600"
+              className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/40 dark:border-slate-700/60 bg-white dark:bg-slate-900/40 dark:bg-slate-800/40 text-slate-600 dark:text-slate-400 backdrop-blur-md transition-all hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-600"
             >
               <ChevronRight size={18} className="transition-transform group-hover:translate-x-1" />
             </button>

@@ -44,7 +44,7 @@ const Skills = () => {
             >
               <motion.h3
                 variants={headerVariants}
-                className="mb-8 flex items-center gap-3 text-2xl font-bold text-slate-900"
+                className="mb-8 flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white"
               >
                 <span
                   className="h-1.5 w-8 rounded-full"
